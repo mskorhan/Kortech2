@@ -109,8 +109,13 @@ function App() {
         window.dataLayer.push(args);
       }
       gtag('js', new Date());
-      gtag('config', 'G-KORTECH2025');
-      gtag('config', 'AW-KORTECH-CONVERSION');
+      
+      // Use environment variables for tracking IDs
+      const ga4Id = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-KORTECH2025';
+      const adsId = import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-KORTECH2025';
+      
+      gtag('config', ga4Id);
+      gtag('config', adsId);
       
       // Enhanced ecommerce tracking for service requests
       (window as any).trackServiceRequest = function(service: string, value: number) {
@@ -147,7 +152,7 @@ function App() {
           
           {/* New Service Pages with Clean URLs */}
           <Route path="/computer-repair" element={<ComputerRepair />} />
-          <Route path="/laptop-repair" element={<LaptopRepair />} />
+          <Route path="/laptop-repair" element={<MainLaptopRepair />} />
           <Route path="/mac-repair" element={<MacRepair />} />
           <Route path="/console-repair" element={<ConsoleRepair />} />
           <Route path="/phone-repair" element={<PhoneRepair />} />
