@@ -203,7 +203,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mobile-stack mobile-space-y-4">
               <a
                 href="tel:704-246-7642"
-                className="bg-brand-primary hover:bg-brand-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg transform hover:scale-105 whitespace-nowrap mobile-full-width min-w-[240px] sm:min-w-[260px]"
+                className="bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg transform hover:scale-105 whitespace-nowrap mobile-full-width min-w-[260px]"
                 onClick={() => console.log('GA4 conversion: PHONE_CLICK')}
               >
                 <Phone className="h-6 w-6 mr-3 flex-shrink-0" />
@@ -211,7 +211,7 @@ export default function Home() {
               </a>
               <a
                 href="sms:980-888-5300"
-                className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-2 transition-all duration-300 whitespace-nowrap mobile-full-width min-w-[240px] sm:min-w-[260px]"
+                className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300 whitespace-nowrap mobile-full-width min-w-[260px]"
                 onClick={() => console.log('GA4 conversion: SMS_CLICK')}
               >
                 <MessageSquare className="h-6 w-6 mr-3 flex-shrink-0" />
@@ -219,7 +219,7 @@ export default function Home() {
               </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm sm:text-base text-slate-600">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-base text-slate-600">
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5 text-green-400" />
                   <span>Same-Day Service</span>
