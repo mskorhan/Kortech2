@@ -16,11 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computer Repair Charlotte NC | KorTech Service</title>
     <meta name="description"
-          content="Professional computer repair Charlotte NC. Mac & PC repair, virus removal, data recovery & IT support. Same-day service. Call 704-246-7642 for free quote!" />
+          content="Expert computer repair, Mac & PC repair, virus removal, data recovery & IT support in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. Same-day service. Call 704-246-7642!" />
     <link rel="canonical" href="https://www.kortechservice.com/">
     
     <!-- Critical Inline CSS -->
-    <style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KORTECH2025"></script>
       /* Critical above-the-fold styles */
       body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
       .hero-section { background: linear-gradient(135deg, #f1f5f9 0%, #dbeafe 100%); min-height: 100vh; display: flex; align-items: center; }
@@ -46,6 +46,25 @@
           'currency': 'USD',
           'value': value || 150,
           'service_type': service
+        });
+      }
+      
+      // Track phone calls
+      function trackPhoneCall(source) {
+        gtag('event', 'phone_call', {
+          'event_category': 'Contact',
+          'event_label': 'Phone Call',
+          'source': source || 'unknown'
+        });
+      }
+      
+      // Track text messages
+      function trackTextMessage(source) {
+        gtag('event', 'text_message', {
+          'event_category': 'Contact',
+          'event_label': 'Text Message',
+          'value': value,
+          'currency': 'USD'
         });
       }
       
@@ -127,10 +146,24 @@
         "Indian Trail, NC", 
         "Mint Hill, NC",
         "Monroe, NC",
+        "Waxhaw, NC",
+        "Pineville, NC",
+        "Ballantyne, NC"
+        "Waxhaw, NC",
+        "Pineville, NC",
+        "Ballantyne, NC"
         "Pineville, NC",
         "Ballantyne, NC"
       ],
+      "description": "Expert computer repair, Mac & PC repair, virus removal, data recovery & IT support in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. Same-day service. Call 704-246-7642!",
       "sameAs": [
+        "https://www.facebook.com/KortechService/",
+        "https://www.instagram.com/kortechservices",
+        "https://twitter.com/kortechservice",
+        "https://www.linkedin.com/company/kortechservice",
+        "https://www.youtube.com/@kortechservice",
+        "https://g.page/kortechservice"
+      ]
         "https://www.facebook.com/KortechService/",
         "https://www.instagram.com/kortechservices",
         "https://twitter.com/kortechservice",
@@ -141,27 +174,92 @@
     }
     </script>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Computer Repair Charlotte NC | KorTech Service | Call 704-246-7642" />
-    <meta property="og:description"
-          content="Professional computer repair Charlotte NC. Mac & PC repair, virus removal, data recovery & IT support. Same-day service. Call 704-246-7642 for free quote!" />
-    <meta property="og:type" content="website" />
+    <!-- Critical Inline CSS -->
+    <style>
+      /* Critical above-the-fold styles */
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        font-display: swap;
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #f1f5f9 0%, #dbeafe 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+      }
+      
+      .hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: bold;
+        color: #1e293b;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      
+      .hero-subtitle {
+        font-size: clamp(1.125rem, 4vw, 1.5rem);
+        color: #475569;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .btn-primary {
+        background: #0099FF;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary:hover {
+        background: #071930;
+        transform: scale(1.05);
+      }
+      
+      /* Prevent layout shift */
+      img {
+        height: auto;
+        max-width: 100%;
+        width: auto;
+      }
+      
+      /* Logo optimization */
+      .navbar-logo {
+        height: 48px;
+        width: auto;
+        object-fit: contain;
+      }
+    </style>
     <meta property="og:url" content="https://www.kortechservice.com/">
     <meta property="og:image" content="https://www.kortechservice.com/transparent-logo-1.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="KorTech Service" />
-    <meta property="og:locale" content="en_US" />
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Computer Repair Charlotte NC | KorTech Service | Call 704-246-7642" />
-    <meta name="twitter:description"
-          content="Professional computer repair Charlotte NC. Mac & PC repair, virus removal, data recovery & IT support. Same-day service. Call 704-246-7642 for free quote!" />
-    <meta name="twitter:image" content="https://www.kortechservice.com/transparent-logo-1.png" />
     <meta name="twitter:site" content="@kortechservice" />
     <meta name="twitter:creator" content="@kortechservice" />
-    
+    <meta property="og:site_name" content="KorTech Service" />
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

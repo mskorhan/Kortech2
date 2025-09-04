@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { generatePageTitle, generateMetaDescription } from '../utils/seo';
 
 interface SEOHeadProps {
   title: string;
@@ -36,12 +37,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   const currentLocation = useLocation();
   // Clean canonical URL - remove parameters and ensure proper format
   const cleanCanonicalPath = canonicalUrl ? canonicalUrl.split('?')[0].split('#')[0] : currentLocation.pathname.split('?')[0].split('#')[0];
-  const fullCanonicalUrl = `https://www.kortechservice.com${cleanCanonicalPath}`;
+  const fullCanonicalUrl = `https://www.kortechservice.com${cleanCanonicalPath === '/' ? '' : cleanCanonicalPath}`;
   const fullOgUrl = ogUrl || fullCanonicalUrl || `https://www.kortechservice.com${currentLocation.pathname}`;
   
   // Dynamic title and description based on page
-  const dynamicTitle = title || 'KorTech Service • Computer Repair Charlotte NC';
-  const dynamicDescription = description || 'Professional computer repair Charlotte NC. Mac & PC repair, virus removal, data recovery & IT support. Call 704-246-7642 for free quote!';
+  const dynamicTitle = title || generatePageTitle('Computer Repair Charlotte NC');
+  const dynamicDescription = description || generateMetaDescription(
+    'computer repair, Mac & PC repair, virus removal, data recovery & IT support',
+    'Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne'
+  );
 
   // Generate breadcrumb schema for all pages
   const breadcrumbSchema = {
@@ -90,6 +94,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
+      {/* Additional local SEO meta tags */}
+      <meta name="geo.region" content="US-NC" />
+      <meta name="geo.position" content="35.2271;-80.8431" />
+      <meta name="ICBM" content="35.2271, -80.8431" />
+      <meta name="coverage" content="Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne, South Charlotte, Southeast Charlotte, NC" />
+
       {/* Robots meta */}
       {noindex ? (
         <meta name="robots" content="noindex, nofollow" />
@@ -122,12 +132,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {location && <meta name="geo.placename" content={location} />}
       {service && <meta name="service" content={service} />}
       {city && <meta name="geo.placename" content={city} />}
-      
-      {/* Additional local SEO meta tags */}
-      <meta name="geo.region" content="US-NC" />
-      <meta name="geo.position" content="35.2271;-80.8431" />
-      <meta name="ICBM" content="35.2271, -80.8431" />
-      <meta name="coverage" content="Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne, South Charlotte, Southeast Charlotte, NC" />
 
       {/* Schema.org JSON-LD */}
       {allSchemas.map((s, i) => (
