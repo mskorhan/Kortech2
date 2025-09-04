@@ -11,7 +11,7 @@
   body {
     font-display: swap;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
   }
   
   /* Prevent layout shift */
@@ -31,9 +31,9 @@
   }
   
   .hero-content {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     text-align: center;
     position: relative;
     z-index: 10;
@@ -44,14 +44,14 @@
     font-weight: bold;
     color: #1e293b;
     margin-bottom: 1rem;
-    line-height: 1.1;
+    line-height: 1.2;
   }
   
   .hero-subtitle {
     font-size: clamp(1.125rem, 4vw, 1.5rem);
     color: #475569;
     margin-bottom: 2rem;
-    max-width: 600px;
+    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -59,14 +59,14 @@
   .btn-primary {
     background: #0099FF;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border-radius: 0.75rem;
     text-decoration: none;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin: 0.5rem;
+    margin: 0.25rem;
     transition: all 0.3s ease;
   }
   
@@ -109,11 +109,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-primary hover:bg-brand-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg transform hover:scale-105 whitespace-nowrap;
+    @apply bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg transform hover:scale-105 whitespace-nowrap;
   }
   
   .btn-secondary {
-    @apply border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-2 transition-all duration-300 whitespace-nowrap;
+    @apply border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300 whitespace-nowrap;
   }
   
   .card {
@@ -121,33 +121,33 @@
   }
   
   .card-interactive {
-    @apply bg-white rounded-xl p-6 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300;
+    @apply bg-white rounded-xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300;
   }
 }
 
 /* Responsive utilities */
 .space-responsive {
-  @apply space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10;
+  @apply space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12;
 }
 
 .py-responsive {
-  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  @apply py-16 sm:py-20 md:py-24 lg:py-32;
 }
 
 .px-responsive {
-  @apply px-4 sm:px-6 lg:px-8;
+  @apply px-6 sm:px-8 lg:px-12;
 }
 
 .grid-responsive-2 {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8;
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10;
 }
 
 .grid-responsive-3 {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10;
 }
 
 .grid-responsive-4 {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10;
 }
 
 /* Gradients */
@@ -161,6 +161,23 @@
 
 .bg-brand-gradient {
   @apply bg-gradient-to-br from-brand-primary to-blue-600;
+}
+
+/* Typography utilities */
+.text-responsive-sm {
+  @apply text-lg sm:text-xl md:text-2xl;
+}
+
+.text-responsive-md {
+  @apply text-2xl sm:text-3xl md:text-4xl;
+}
+
+.text-responsive-lg {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
+
+.text-responsive-xl {
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
 }
 
 /* Mobile-specific utilities */

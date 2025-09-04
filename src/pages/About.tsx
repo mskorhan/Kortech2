@@ -143,10 +143,6 @@ const About = () => {
               We're your trusted local technology experts. Explore our <a href="/services" className="text-blue-600 hover:text-blue-800 font-medium">complete services</a> or 
               <a href="/contact" className="text-blue-600 hover:text-blue-800 font-medium">visit our Charlotte location</a> today.
             </p>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light mt-4">
-              Learn about <a href="https://www.sba.gov/business-guide/manage-your-business/cybersecurity" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-medium">small business cybersecurity from the SBA</a> 
-              and <a href="https://www.charlottechamber.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-medium">Charlotte Chamber of Commerce</a>.
-            </p>
           </div>
         </div>
       </section>

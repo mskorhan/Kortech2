@@ -408,7 +408,7 @@ export default function Home() {
                   <Shield className="h-5 w-5 text-green-600" />
                   <span className="text-green-700 font-semibold text-sm sm:text-base">Why Choose Us</span>
                 </div>
-                <h2 className="text-responsive-lg font-bold leading-tight">
+                <h2 className="text-responsive-md font-bold leading-tight">
                   <span className="text-slate-800">
                     Charlotte's Most
                   </span>
@@ -416,15 +416,11 @@ export default function Home() {
                     Trusted Tech Experts
                   </span>
                 </h2>
-                <p className="text-lg sm:text-xl md:text-2xl text-slate-600 font-light leading-relaxed">
+                <p className="text-responsive-sm text-slate-600 font-light leading-relaxed">
                   For over 25 years, we've been Charlotte, Matthews, Mint Hill, Pineville, and Ballantyne's go-to local computer repair and IT support provider with our convenient Sardis Road location.
                   Located at <a href="/contact" className="text-blue-600 hover:text-blue-800 font-medium">1721 Sardis Rd N, Suite 7A, Charlotte, NC 28270</a>
                   . Learn more about our <a href="/services" className="text-blue-600 hover:text-blue-800 font-medium">comprehensive repair services</a> or 
                   <a href="/about" className="text-blue-600 hover:text-blue-800 font-medium">our 25+ year history</a> serving the Charlotte community.
-                </p>
-                <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed mt-4">
-                  For additional tech resources, visit <a href="https://www.ftc.gov/tips-advice/business-center/guidance/computer-security-small-business" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-medium">FTC Computer Security Guidelines</a> 
-                  and <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-medium">NIST Cybersecurity Framework</a>.
                 </p>
               </div>
 
@@ -527,35 +523,35 @@ export default function Home() {
               </span>
             </h2>
             
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 font-light">
+            <p className="text-responsive-sm text-gray-200 font-light">
               Visit our Charlotte location for expert computer repair service with transparent pricing and same-day turnaround. Serving Charlotte, Matthews, Pineville, Mint Hill, Ballantyne with walk-in availability.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mobile-stack mobile-space-y-4">
               <a
                 href="tel:704-246-7642?utm_source=site&utm_medium=cta&utm_campaign=phone_cta"
-                className="bg-white text-brand-primary hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[240px] sm:min-w-[260px] mobile-full-width"
+                className="bg-white text-brand-primary hover:bg-gray-100 px-8 py-4 rounded-2xl font-bold text-xl flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[260px] mobile-full-width"
               >
                 <Phone className="h-6 w-6" />
                 <span>704-246-7642</span>
               </a>
               <a
                 href="sms:980-888-5300?utm_source=site&utm_medium=cta&utm_campaign=text_cta"
-                className="border-2 border-white text-white hover:bg-white hover:text-brand-primary px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl flex items-center justify-center space-x-2 transition-all duration-300 min-w-[240px] sm:min-w-[260px] mobile-full-width"
+                className="border-2 border-white text-white hover:bg-white hover:text-brand-primary px-8 py-4 rounded-2xl font-bold text-xl flex items-center justify-center space-x-2 transition-all duration-300 min-w-[260px] mobile-full-width"
               >
                 <MessageSquare className="h-6 w-6" />
                 <span>980-888-5300</span>
               </a>
               <a
                 href="/contact?utm_source=site&utm_medium=cta&utm_campaign=contact_cta"
-                className="border-2 border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-brand-dark px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl flex items-center justify-center space-x-2 transition-all duration-300 min-w-[240px] sm:min-w-[260px] mobile-full-width"
+                className="border-2 border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-brand-dark px-8 py-4 rounded-2xl font-bold text-xl flex items-center justify-center space-x-2 transition-all duration-300 min-w-[260px] mobile-full-width"
               >
                 <Mail className="h-6 w-6" />
                 <span>Get Quote</span>
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base text-gray-300">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-base text-gray-300">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-green-400" />
                 <span>Same-Day Service</span>

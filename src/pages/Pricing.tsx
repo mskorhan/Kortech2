@@ -197,10 +197,6 @@ const Pricing = () => {
               learn <a href="/about" className="text-blue-300 hover:text-white font-medium">about our company</a>, or 
               <a href="/contact" className="text-blue-300 hover:text-white font-medium">contact us for consultation</a>.
             </p>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto font-light mt-4">
-              For business planning resources, visit <a href="https://www.sba.gov/business-guide/manage-your-business/cybersecurity" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white font-medium">SBA Cybersecurity Guide</a> 
-              and <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white font-medium">NIST Cybersecurity Framework</a>.
-            </p>
 
             <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-2xl p-6 border border-red-400/30 backdrop-blur-sm">
               <div className="flex items-center justify-center space-x-2 mb-2">

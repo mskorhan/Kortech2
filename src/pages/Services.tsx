@@ -377,10 +377,6 @@ const Services = () => {
               Visit our <a href="/about" className="text-blue-300 hover:text-white font-medium">about page</a> to learn more about our 25+ years of experience, or 
               <a href="/contact" className="text-blue-300 hover:text-white font-medium">contact us</a> for immediate assistance.
             </p>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto font-light mt-4">
-              For industry standards and best practices, visit <a href="https://www.comptia.org/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white font-medium">CompTIA</a> 
-              and <a href="https://www.bbb.org/us/nc/charlotte" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white font-medium">Better Business Bureau Charlotte</a>.
-            </p>
           </div>
         </div>
       </section>

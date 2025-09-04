@@ -123,10 +123,6 @@ ${formData.message}
               check our <a href="/pricing" className="text-blue-600 hover:text-blue-800 font-medium">transparent pricing</a>. 
               Serving Charlotte, Matthews, Mint Hill, Pineville, and Ballantyne.
             </p>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light mt-4">
-              For local resources, visit the <a href="https://www.charlottenc.gov/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-medium">City of Charlotte website</a> 
-              and <a href="https://www.ftc.gov/tips-advice/business-center/guidance/computer-security-small-business" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-medium">FTC Computer Security Guidelines</a>.
-            </p>
           </div>
         </div>
       </section>
