@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useGA4 } from './hooks/useGA4';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -74,11 +74,10 @@ function App() {
   useGA4();
 
   return (
-    <Router>
-      <div className="min-h-screen bg-white">
-        <Navbar />
-        <main>
-          <Routes>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <main>
+        <Routes>
             {/* Main pages */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -155,11 +154,10 @@ function App() {
 
             {/* 404 page */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
