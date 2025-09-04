@@ -10,10 +10,10 @@ export const generatePageTitle = (pageTitle: string, includeCompany = true): str
 
 export const generateMetaDescription = (
   service: string,
-  location: string = 'Charlotte, Matthews, Indian Trail, Mint Hill',
+  location: string = 'Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne',
   callToAction: string = 'Call 704-246-7642'
 ): string => {
-  return `Professional ${service} in ${location} & surrounding areas. Expert technicians, transparent pricing, same-day service available. ${callToAction} or Text/Call 980-888-5300.`;
+  return `Expert ${service} in ${location} & surrounding areas. Professional technicians, transparent pricing, same-day service available. ${callToAction} or Text 980-888-5300.`;
 };
 
 export const generateStructuredData = (type: string, data: any) => {
@@ -34,7 +34,7 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: 
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      item: `https://kortechservice.com${crumb.url}`
+      item: `https://www.kortechservice.com${crumb.url}`
     }))
   };
 };
