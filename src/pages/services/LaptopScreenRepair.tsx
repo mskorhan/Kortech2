@@ -15,7 +15,7 @@ import {
   Link
 } from 'lucide-react';
 
-const LaptopRepair = () => {
+const LaptopScreenRepair = () => {
   const faqs = [
     {
       question: "What laptop problems do you fix at your Charlotte shop?",
@@ -363,5 +363,3 @@ const LaptopRepair = () => {
     </div>
   );
 };
-
-export default LaptopRepair;

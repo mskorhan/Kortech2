@@ -24,7 +24,6 @@ import XboxHDMIRepair from './pages/services/XboxHDMIRepair';
 import LaptopScreenRepair from './pages/services/LaptopScreenRepair';
 import SSDUpgrades from './pages/services/SSDUpgrades';
 import VirusMalwareRemoval from './pages/services/VirusMalwareRemoval';
-import LaptopRepair from './pages/services/LaptopScreenRepair';
 import ITSupport from './pages/services/ITSupport';
 import DataRecovery from './pages/services/DataRecovery';
 import CustomGamingPC from './pages/services/CustomGamingPC';
