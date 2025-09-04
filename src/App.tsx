@@ -64,7 +64,7 @@ import NotFound from './pages/NotFound';
 
 // New Service Pages
 import ComputerRepair from './pages/services/ComputerRepair';
-import MainLaptopRepair from './pages/services/LaptopRepair';
+import LaptopRepair from './pages/services/LaptopRepair';
 import MacRepair from './pages/services/MacRepair';
 import ConsoleRepair from './pages/services/ConsoleRepair';
 import PhoneRepair from './pages/services/PhoneRepair';
@@ -101,6 +101,28 @@ function ScrollToTop() {
 }
 
 function App() {
+  React.useEffect(() => {
+    // Initialize Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-KORTECH2025');
+      gtag('config', 'AW-KORTECH-CONVERSION');
+      
+      // Enhanced ecommerce tracking for service requests
+      (window as any).trackServiceRequest = function(service: string, value: number) {
+        gtag('event', 'service_request', {
+          'event_category': 'engagement',
+          'event_label': service,
+          'value': value
+        });
+      };
+    }
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen bg-white">
@@ -133,7 +155,6 @@ function App() {
           <Route path="/gaming-pc-builds" element={<GamingPCBuilds />} />
           <Route path="/electronics-recycling" element={<ElectronicsRecycling />} />
           
-          <Route path="/laptop-repair" element={<MainLaptopRepair />} />
           {/* Service Landing Pages */}
           <Route path="/ps5-hdmi-repair" element={<PS5HDMIRepair />} />
           <Route path="/xbox-hdmi-repair" element={<XboxHDMIRepair />} />

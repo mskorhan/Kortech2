@@ -21,24 +21,6 @@
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_GA4_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YOUR_GA4_ID');
-      
-      // Google Ads Conversion Tracking
-      gtag('config', 'AW-YOUR_CONVERSION_ID');
-      
-      // Enhanced ecommerce tracking for service requests
-      function trackServiceRequest(service, value) {
-        gtag('event', 'service_request', {
-          'event_category': 'engagement',
-          'event_label': service,
-          'value': value
-        });
-      }
-    </script>
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
