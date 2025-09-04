@@ -1,6 +1,6 @@
 # KorTech Service Website - Complete SEO Optimization
 
-A fully optimized, production-ready website for KorTech Service - Computer Repair Charlotte NC, designed to dominate local search results across all service areas.
+A fully optimized, production-ready website for KorTech Service designed to dominate local search results for computer repair, phone repair, console repair, and all services across Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, and Ballantyne.
 
 ## 🎯 SEO Optimization Features
 
@@ -8,7 +8,7 @@ A fully optimized, production-ready website for KorTech Service - Computer Repai
 - **Target Areas**: Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne
 - **Dedicated Location Pages**: Unique content for each service area
 - **Local Schema Markup**: City-specific structured data
-- **Service Area Coverage**: All pages optimized for multi-city targeting
+- **Service Coverage**: Computer repair, phone repair, console repair, data recovery, IT support
 
 ### Technical SEO
 - **Clean URLs**: Keyword-rich slugs for all services and locations
@@ -43,7 +43,7 @@ This creates a `dist` folder with all static files ready for deployment.
 ### 1. Google Search Console Setup
 1. **Verify Domain Ownership**:
    - Go to [Google Search Console](https://search.google.com/search-console)
-   - Add property: `https://www.kortechservice.com`
+   - Add property: `https://www.kortechservice.com` 
    - Verify using DNS TXT record or HTML file upload
 
 2. **Submit Sitemap**:
@@ -65,7 +65,8 @@ This creates a `dist` folder with all static files ready for deployment.
 2. **Update Environment Variables**:
    ```bash
    # Add to .env file
-   VITE_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
+   VITE_GA4_ID=G-XXXXXXXXXX
+   VITE_GOOGLE_ADS_ID=AW-XXXXXXXXXX
    ```
 
 3. **Verify Tracking**:

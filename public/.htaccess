@@ -15,25 +15,46 @@ RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
 # ✅ 301 Redirects for Clean URLs
 # ------------------------------------------
 # Redirect old .shtml URLs to clean slugs
-RewriteRule ^computer-repair\.shtml$ /services [R=301,L]
-RewriteRule ^data-recovery\.shtml$ /data-recovery [R=301,L]
+RewriteRule ^computer-repair\.shtml$ /computer-repair [R=301,L]
+RewriteRule ^laptop-repair\.shtml$ /laptop-repair [R=301,L]
+RewriteRule ^mac-repair\.shtml$ /mac-repair [R=301,L]
+RewriteRule ^console-repair\.shtml$ /console-repair [R=301,L]
 RewriteRule ^xbox-hdmi-repair\.shtml$ /xbox-hdmi-repair [R=301,L]
 RewriteRule ^ps5-hdmi-repair\.shtml$ /ps5-hdmi-repair [R=301,L]
+RewriteRule ^phone-repair\.shtml$ /phone-repair [R=301,L]
+RewriteRule ^tablet-repair\.shtml$ /tablet-repair [R=301,L]
+RewriteRule ^data-recovery\.shtml$ /data-recovery [R=301,L]
 RewriteRule ^printer-router-repair\.shtml$ /printer-router-repair [R=301,L]
-RewriteRule ^custom-gaming-pc\.shtml$ /custom-gaming-pc [R=301,L]
-RewriteRule ^charlotte\.shtml$ /charlotte-computer-repair [R=301,L]
-RewriteRule ^matthews\.shtml$ /matthews-computer-repair [R=301,L]
-RewriteRule ^mint-hill\.shtml$ /mint-hill-computer-repair [R=301,L]
-RewriteRule ^indian-trail\.shtml$ /indian-trail-computer-repair [R=301,L]
+RewriteRule ^it-support\.shtml$ /it-support [R=301,L]
+RewriteRule ^gaming-pc-builds\.shtml$ /gaming-pc-builds [R=301,L]
+RewriteRule ^electronics-recycling\.shtml$ /electronics-recycling [R=301,L]
+
+# Location redirects
+RewriteRule ^charlotte\.shtml$ /locations/charlotte [R=301,L]
+RewriteRule ^matthews\.shtml$ /locations/matthews [R=301,L]
+RewriteRule ^mint-hill\.shtml$ /locations/mint-hill [R=301,L]
+RewriteRule ^indian-trail\.shtml$ /locations/indian-trail [R=301,L]
 RewriteRule ^waxhaw\.shtml$ /locations/waxhaw [R=301,L]
 RewriteRule ^pineville\.shtml$ /locations/pineville [R=301,L]
 RewriteRule ^ballantyne\.shtml$ /locations/ballantyne [R=301,L]
 
 # Redirect duplicate URLs to canonical versions
-RewriteRule ^computer-repair-charlotte/?$ /charlotte-computer-repair [R=301,L]
-RewriteRule ^computer-repair-matthews/?$ /matthews-computer-repair [R=301,L]
-RewriteRule ^computer-repair-mint-hill/?$ /mint-hill-computer-repair [R=301,L]
-RewriteRule ^computer-repair-indian-trail/?$ /indian-trail-computer-repair [R=301,L]
+RewriteRule ^computer-repair-charlotte/?$ /locations/charlotte [R=301,L]
+RewriteRule ^computer-repair-matthews/?$ /locations/matthews [R=301,L]
+RewriteRule ^computer-repair-mint-hill/?$ /locations/mint-hill [R=301,L]
+RewriteRule ^computer-repair-indian-trail/?$ /locations/indian-trail [R=301,L]
+RewriteRule ^computer-repair-waxhaw/?$ /locations/waxhaw [R=301,L]
+RewriteRule ^computer-repair-pineville/?$ /locations/pineville [R=301,L]
+RewriteRule ^computer-repair-ballantyne/?$ /locations/ballantyne [R=301,L]
+
+# Service variations
+RewriteRule ^laptop-screen-repair/?$ /laptop-repair [R=301,L]
+RewriteRule ^smartphone-repair/?$ /phone-repair [R=301,L]
+RewriteRule ^iphone-repair/?$ /phone-repair [R=301,L]
+RewriteRule ^ipad-repair/?$ /tablet-repair [R=301,L]
+RewriteRule ^macbook-repair/?$ /mac-repair [R=301,L]
+RewriteRule ^virus-removal/?$ /computer-repair [R=301,L]
+RewriteRule ^malware-removal/?$ /computer-repair [R=301,L]
 
 # ------------------------------------------
 # ✅ React Router / SPA Support
@@ -101,11 +122,6 @@ RewriteRule ^ index.html [L]
   
   # Specific image caching
   <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico)$">
-    Header set Cache-Control "public, max-age=94608000, immutable"
-    Header set Expires "Thu, 31 Dec 2027 23:59:59 GMT"
-  </FilesMatch>
-  
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico|x-icon)$">
     Header set Cache-Control "public, max-age=94608000, immutable"
     Header set Expires "Thu, 31 Dec 2027 23:59:59 GMT"
   </FilesMatch>

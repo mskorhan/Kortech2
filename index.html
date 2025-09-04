@@ -35,10 +35,14 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-KORTECH2025');
+      
+      // Use environment variable for GA4 ID
+      const ga4Id = import.meta.env.VITE_GA4_ID || 'G-KORTECH2025';
+      gtag('config', ga4Id);
       
       // Google Ads Conversion Tracking
-      gtag('config', 'AW-KORTECH2025');
+      const adsId = import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-KORTECH2025';
+      gtag('config', adsId);
       
       // Enhanced ecommerce tracking for service requests
       function trackServiceRequest(service, value) {

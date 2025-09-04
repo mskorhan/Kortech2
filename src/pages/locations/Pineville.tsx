@@ -115,8 +115,8 @@ const Pineville = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer Repair Pineville NC | KorTech Service"
-        description="Professional computer repair services in Pineville, NC. Same-day Mac & PC repair, data recovery, IT support. Pickup and delivery available. Call 704-246-7642!"
+        title="Computer, Phone & Console Repair in Pineville NC | KorTech Service"
+        description="Expert computer, phone & console repair in Pineville, NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
         canonicalUrl="/locations/pineville"
         location="Pineville, NC"
         service="Computer Repair"

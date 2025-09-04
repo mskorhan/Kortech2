@@ -63,6 +63,16 @@ import XboxHDMIRepairGuide from './pages/blog/XboxHDMIRepairGuide';
 import VirusRemovalGuideCharlotte from './pages/blog/VirusRemovalGuideCharlotte';
 import NotFound from './pages/NotFound';
 
+// New Service Pages
+import ComputerRepair from './pages/services/ComputerRepair';
+import LaptopRepair from './pages/services/LaptopRepair';
+import MacRepair from './pages/services/MacRepair';
+import ConsoleRepair from './pages/services/ConsoleRepair';
+import PhoneRepair from './pages/services/PhoneRepair';
+import TabletRepair from './pages/services/TabletRepair';
+import GamingPCBuilds from './pages/services/GamingPCBuilds';
+import ElectronicsRecycling from './pages/services/ElectronicsRecycling';
+
 // ScrollToTop component to handle scrolling to top on route changes
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -114,6 +124,16 @@ function App() {
           <Route path="/graphic-design" element={<GraphicDesign />} />
           <Route path="/remote-assistance" element={<RemoteAssistance />} />
           
+          {/* New Service Pages with Clean URLs */}
+          <Route path="/computer-repair" element={<ComputerRepair />} />
+          <Route path="/laptop-repair" element={<LaptopRepair />} />
+          <Route path="/mac-repair" element={<MacRepair />} />
+          <Route path="/console-repair" element={<ConsoleRepair />} />
+          <Route path="/phone-repair" element={<PhoneRepair />} />
+          <Route path="/tablet-repair" element={<TabletRepair />} />
+          <Route path="/gaming-pc-builds" element={<GamingPCBuilds />} />
+          <Route path="/electronics-recycling" element={<ElectronicsRecycling />} />
+          
           <Route path="/laptop-repair" element={<LaptopRepair />} />
           {/* Service Landing Pages */}
           <Route path="/ps5-hdmi-repair" element={<PS5HDMIRepair />} />
@@ -135,15 +155,22 @@ function App() {
           <Route path="/nintendo-switch-repair" element={<NintendoSwitchRepair />} />
           
           {/* Location Pages */}
+          <Route path="/locations/charlotte" element={<Charlotte />} />
+          <Route path="/locations/matthews" element={<Matthews />} />
+          <Route path="/locations/indian-trail" element={<IndianTrail />} />
+          <Route path="/locations/mint-hill" element={<MintHill />} />
+          <Route path="/locations/monroe" element={<Monroe />} />
+          <Route path="/locations/waxhaw" element={<Waxhaw />} />
+          <Route path="/locations/pineville" element={<Pineville />} />
+          <Route path="/locations/ballantyne" element={<Ballantyne />} />
+          <Route path="/locations" element={<Locations />} />
+          
+          {/* Legacy redirects - these will be handled by .htaccess but keeping for SPA routing */}
           <Route path="/charlotte-computer-repair" element={<Charlotte />} />
           <Route path="/matthews-computer-repair" element={<Matthews />} />
           <Route path="/indian-trail-computer-repair" element={<IndianTrail />} />
           <Route path="/mint-hill-computer-repair" element={<MintHill />} />
           <Route path="/monroe-computer-repair" element={<Monroe />} />
-          <Route path="/locations/waxhaw" element={<Waxhaw />} />
-          <Route path="/locations/pineville" element={<Pineville />} />
-          <Route path="/locations/ballantyne" element={<Ballantyne />} />
-          <Route path="/locations" element={<Locations />} />
           
           {/* Blog Posts */}
           <Route path="/blog/how-to-know-when-to-replace-phone-battery" element={<HowToKnowWhenToReplacePhoneBattery />} />

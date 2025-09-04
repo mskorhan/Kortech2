@@ -116,8 +116,8 @@ const Ballantyne = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer Repair Ballantyne NC | KorTech Service"
-        description="Professional computer repair services in Ballantyne, NC. Same-day Mac & PC repair, data recovery, IT support for residents and businesses. Call 704-246-7642!"
+        title="Computer, Phone & Console Repair in Ballantyne NC | KorTech Service"
+        description="Expert computer, phone & console repair in Ballantyne, NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, business IT support. Call 704-246-7642!"
         canonicalUrl="/locations/ballantyne"
         location="Ballantyne, NC"
         service="Computer Repair"

@@ -29,24 +29,17 @@ const Navbar: React.FC = () => {
   };
 
   const servicePages = [
-    { name: 'PS5 HDMI Repair', path: '/ps5-hdmi-repair' },
-    { name: 'Xbox HDMI Repair', path: '/xbox-hdmi-repair' },
-    { name: 'Nintendo Switch Repair', path: '/nintendo-switch-repair' },
-    { name: 'Laptop Screen Repair', path: '/laptop-screen-repair' },
-    { name: 'SSD Upgrades', path: '/ssd-upgrades' },
-    { name: 'Virus & Malware Removal', path: '/virus-malware-removal' },
-    { name: 'IT Support', path: '/it-support' },
+    { name: 'Computer Repair', path: '/computer-repair' },
+    { name: 'Laptop Repair', path: '/laptop-repair' },
+    { name: 'Mac Repair', path: '/mac-repair' },
+    { name: 'Phone Repair', path: '/phone-repair' },
+    { name: 'Tablet Repair', path: '/tablet-repair' },
+    { name: 'Console Repair', path: '/console-repair' },
+    { name: 'Gaming PC Builds', path: '/gaming-pc-builds' },
     { name: 'Data Recovery', path: '/data-recovery' },
-    { name: 'Custom Gaming PC', path: '/custom-gaming-pc' },
-    { name: 'Water Damage Repair', path: '/water-damage-repair' },
-    { name: 'Smartphone Repair', path: '/smartphone-screen-repair-charlotte' },
-    { name: 'Tablet & iPad Repair', path: '/tablet-ipad-repair' },
-    { name: 'Smart TV Repair', path: '/smart-tv-repair' },
+    { name: 'IT Support', path: '/it-support' },
     { name: 'Printer & Router Repair', path: '/printer-router-repair' },
-    { name: 'PCB Micro-Soldering', path: '/pcb-micro-soldering' },
-    { name: 'Appliance Electronics', path: '/appliance-electronics-repair' },
-    { name: 'Graphic Design', path: '/graphic-design' },
-    { name: 'Remote Assistance', path: '/remote-assistance' }
+    { name: 'Electronics Recycling', path: '/electronics-recycling' }
   ];
 
   useEffect(() => {

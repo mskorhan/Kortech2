@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { generatePageTitle, generateMetaDescription } from '../utils/seo';
 
 interface SEOHeadProps {
   title: string;
@@ -35,18 +34,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   noindex = false
 }) => {
   const currentLocation = useLocation();
+  
   // Clean canonical URL - remove parameters and ensure proper format
   const cleanCanonicalPath = canonicalUrl ? canonicalUrl.split('?')[0].split('#')[0] : currentLocation.pathname.split('?')[0].split('#')[0];
   const fullCanonicalUrl = `https://www.kortechservice.com${cleanCanonicalPath === '/' ? '' : cleanCanonicalPath}`;
-  const fullOgUrl = ogUrl || fullCanonicalUrl || `https://www.kortechservice.com${currentLocation.pathname}`;
+  const fullOgUrl = ogUrl || fullCanonicalUrl;
   
-  // Dynamic title and description based on page
-  const dynamicTitle = title || generatePageTitle('Computer Repair Charlotte NC');
-  const dynamicDescription = description || generateMetaDescription(
-    'computer repair, Mac & PC repair, virus removal, data recovery & IT support',
-    'Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne'
-  );
-
   // Generate breadcrumb schema for all pages
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -82,8 +75,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
   return (
     <Helmet>
-      <title>{dynamicTitle}</title>
-      <meta name="description" content={dynamicDescription} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={fullCanonicalUrl} />
       
@@ -111,9 +104,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
-      {fullOgUrl && <meta property="og:url" content={fullOgUrl} />}
-      <meta property="og:title" content={dynamicTitle} />
-      <meta property="og:description" content={dynamicDescription} />
+      <meta property="og:url" content={fullOgUrl} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -122,8 +115,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={dynamicTitle} />
-      <meta name="twitter:description" content={dynamicDescription} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:site" content="@kortechservice" />
       <meta name="twitter:creator" content="@kortechservice" />

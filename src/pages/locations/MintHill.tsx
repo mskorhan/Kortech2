@@ -115,9 +115,9 @@ const MintHill = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer Repair Mint Hill NC | KorTech Service"
-        description="Professional computer repair services in Mint Hill, NC. Same-day Mac & PC repair, data recovery, IT support. Pickup and delivery available. Call 704-246-7642!"
-        canonicalUrl="/mint-hill-computer-repair"
+        title="Computer, Phone & Console Repair in Mint Hill NC | KorTech Service"
+        description="Expert computer, phone & console repair in Mint Hill, NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
+        canonicalUrl="/locations/mint-hill"
         location="Mint Hill, NC"
         service="Computer Repair"
         schema={schema}

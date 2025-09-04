@@ -115,9 +115,9 @@ const IndianTrail = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer Repair Indian Trail NC | KorTech Service"
-        description="Professional computer repair services in Indian Trail, NC. Same-day Mac & PC repair, data recovery, IT support. Pickup and delivery available. Call 704-246-7642!"
-        canonicalUrl="/indian-trail-computer-repair"
+        title="Computer, Phone & Console Repair in Indian Trail NC | KorTech Service"
+        description="Expert computer, phone & console repair in Indian Trail, NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
+        canonicalUrl="/locations/indian-trail"
         location="Indian Trail, NC"
         service="Computer Repair"
         schema={schema}
