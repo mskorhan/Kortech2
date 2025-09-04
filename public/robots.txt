@@ -11,15 +11,10 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
-Allow: /
-
 # Block sensitive folders
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
-Disallow: /cgi-bin/
-Disallow: /assets/private/
 
 # Allow essential resources
 Allow: /assets/
@@ -30,16 +25,10 @@ Allow: /*.jpeg$
 Allow: /*.gif$
 Allow: /*.svg$
 Allow: /favicon.ico
-Allow: /apple-touch-icon.png
-Allow: /favicon-16x16.png
-Allow: /favicon-32x32.png
-Allow: /android-chrome-192x192.png
-Allow: /android-chrome-512x512.png
-Allow: /site.webmanifest
 Allow: /sitemap.xml
 Allow: /robots.txt
 
-# Main service pages
+# Main pages
 Allow: /services/
 Allow: /blog/
 Allow: /contact/
@@ -47,23 +36,14 @@ Allow: /about/
 Allow: /pricing/
 Allow: /locations/
 
-# Location pages
-Allow: /charlotte-computer-repair/
-Allow: /matthews-computer-repair/
-Allow: /indian-trail-computer-repair/
-Allow: /mint-hill-computer-repair/
-Allow: /monroe-computer-repair/
-Allow: /locations/waxhaw/
-Allow: /locations/pineville/
-Allow: /locations/ballantyne/
-
-# Service landing pages
-Allow: /smartphone-screen-repair-charlotte/
-Allow: /tablet-ipad-repair/
-Allow: /smart-tv-repair/
-Allow: /printer-router-repair/
-Allow: /pcb-micro-soldering/
-Allow: /appliance-electronics-repair/
-Allow: /nintendo-switch-repair/
-Allow: /graphic-design/
-Allow: /remote-assistance/
+# Service pages
+Allow: /computer-repair/
+Allow: /laptop-repair/
+Allow: /mac-repair/
+Allow: /console-repair/
+Allow: /phone-repair/
+Allow: /tablet-repair/
+Allow: /data-recovery/
+Allow: /it-support/
+Allow: /gaming-pc-builds/
+Allow: /electronics-recycling/

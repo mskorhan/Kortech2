@@ -115,8 +115,8 @@ const Waxhaw = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer, Phone & Console Repair in Waxhaw NC | KorTech Service"
-        description="Expert computer, phone & console repair in Waxhaw, NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
+        title="Computer Repair Waxhaw NC | KorTech Service"
+        description="Expert computer repair Waxhaw NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
         canonicalUrl="/locations/waxhaw"
         location="Waxhaw, NC"
         service="Computer Repair"

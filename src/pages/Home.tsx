@@ -37,7 +37,7 @@ export default function Home() {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "KorTech Service",
-      "description": "Professional computer repair, Mac & PC repair, virus removal, data recovery, and IT support in Charlotte, Matthews, Indian Trail, Mint Hill & surrounding areas. Call 704-246-7642 for free diagnostics!",
+      "description": "Professional computer repair, Mac & PC repair, virus removal, data recovery & IT support in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. Call 704-246-7642!",
       "url": "https://kortechservice.com",
       "telephone": "704-246-7642",
       "hasMap": "https://www.google.com/maps/place/Kortech+Service/@35.14047,-80.7400749,17z",
@@ -51,8 +51,8 @@ export default function Home() {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "35.1495",
-        "longitude": "-80.8414"
+        "latitude": "35.2271",
+        "longitude": "-80.8431"
       },
       "openingHoursSpecification": [
         {
@@ -81,6 +81,14 @@ export default function Home() {
         "Waxhaw, NC", 
         "Pineville, NC", 
         "Ballantyne, NC"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/KortechService/",
+        "https://www.instagram.com/kortechservices",
+        "https://twitter.com/kortechservice",
+        "https://www.linkedin.com/company/kortechservice",
+        "https://www.youtube.com/@kortechservice",
+        "https://g.page/kortechservice"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -163,8 +171,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       <SEOHead
-        title="Computer Repair Charlotte NC | Professional Mac & PC Repair | KorTech Service"
-        description="Expert Computer Repair Charlotte NC since 1998. Same-day Mac & PC repair, data recovery & virus removal. Call 704-246-7642 for free quote today!"
+        title="Computer Repair Charlotte NC | KorTech Service"
+        description="Expert computer repair Charlotte NC since 1998. Same-day Mac & PC repair, data recovery & virus removal. Call 704-246-7642 for free quote!"
         keywords="computer repair Charlotte NC, Mac repair Charlotte, PC repair Charlotte, virus removal Charlotte, data recovery Charlotte, IT support Charlotte"
         canonicalUrl="/"
         schema={schema}

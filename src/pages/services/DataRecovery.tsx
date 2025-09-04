@@ -72,7 +72,7 @@ const DataRecovery = () => {
     <div className="min-h-screen bg-white">
       <SEOHead
         title="Data Recovery Charlotte NC | KorTech Service"
-        description="Expert data recovery services in Charlotte, NC. Recover lost files from failed hard drives, SSDs, storage devices. 95% success rate. Call 704-246-7642!"
+        description="Expert data recovery Charlotte NC. Recover lost files from failed hard drives, SSDs. 95% success rate. Call 704-246-7642!"
         canonicalUrl="/data-recovery"
         schema={schema}
       />

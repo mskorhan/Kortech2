@@ -160,8 +160,8 @@ const Locations = () => {
   return (
     <div className="min-h-screen bg-white" id="locations-page">
       <SEOHead
-        title="Service Locations | Computer Repair Charlotte Area"
-        description="KorTech Service provides professional computer repair, data recovery, IT support throughout Charlotte, Matthews, Indian Trail, Mint Hill, Monroe, NC. Call 704-246-7642!"
+        title="Service Locations | Computer Repair Charlotte NC"
+        description="KorTech Service provides professional computer repair, data recovery, IT support throughout Charlotte, Matthews, Mint Hill, Monroe NC. Call 704-246-7642!"
         canonicalUrl="/locations"
         schema={schema}
       />

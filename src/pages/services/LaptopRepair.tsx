@@ -80,8 +80,8 @@ const LaptopRepair = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Laptop Repair Charlotte NC | Screen Replacement & Battery Service | KorTech"
-        description="Expert laptop repair in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. Screen replacement, keyboard repair, battery service. Call 704-246-7642!"
+        title="Laptop Repair Charlotte NC | KorTech Service"
+        description="Expert laptop repair Charlotte NC. Screen replacement, keyboard repair, battery service. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
         keywords="laptop repair Charlotte NC, laptop screen repair Charlotte, laptop battery replacement, laptop keyboard repair"
         canonicalUrl="/laptop-repair"
         schema={schema}

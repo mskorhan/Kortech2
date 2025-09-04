@@ -80,8 +80,8 @@ const PhoneRepair = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Phone Repair Charlotte NC | iPhone & Android Screen Repair | KorTech"
-        description="Expert phone repair in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. iPhone & Android screen repair, battery replacement. Call 704-246-7642!"
+        title="Phone Repair Charlotte NC | iPhone & Android | KorTech"
+        description="Expert phone repair Charlotte NC. iPhone & Android screen repair, battery replacement. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
         keywords="phone repair Charlotte NC, iPhone repair Charlotte, Android repair Charlotte, phone screen repair, phone battery replacement"
         canonicalUrl="/phone-repair"
         schema={schema}

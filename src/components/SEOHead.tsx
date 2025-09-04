@@ -10,11 +10,6 @@ interface SEOHeadProps {
   schema?: any[];
   ogImage?: string;
   ogType?: string;
-  ogUrl?: string;
-  twitterCard?: string;
-  location?: string;
-  service?: string;
-  city?: string;
   noindex?: boolean;
 }
 
@@ -23,24 +18,18 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   description,
   keywords,
   canonicalUrl,
-  schema,
+  schema = [],
   ogImage = "https://www.kortechservice.com/transparent-logo-1.png",
   ogType = "website",
-  ogUrl,
-  twitterCard = "summary_large_image",
-  location,
-  service,
-  city,
   noindex = false
 }) => {
-  const currentLocation = useLocation();
+  const location = useLocation();
   
-  // Clean canonical URL - remove parameters and ensure proper format
-  const cleanCanonicalPath = canonicalUrl ? canonicalUrl.split('?')[0].split('#')[0] : currentLocation.pathname.split('?')[0].split('#')[0];
+  // Clean canonical URL
+  const cleanCanonicalPath = canonicalUrl || location.pathname;
   const fullCanonicalUrl = `https://www.kortechservice.com${cleanCanonicalPath === '/' ? '' : cleanCanonicalPath}`;
-  const fullOgUrl = ogUrl || fullCanonicalUrl;
   
-  // Generate breadcrumb schema for all pages
+  // Generate breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -71,7 +60,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     });
   }
 
-  const allSchemas = [breadcrumbSchema, ...(schema || [])];
+  const allSchemas = [breadcrumbSchema, ...schema];
 
   return (
     <Helmet>
@@ -80,31 +69,16 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={fullCanonicalUrl} />
       
-      {/* Viewport and mobile optimization */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
-      {/* Additional local SEO meta tags */}
-      <meta name="geo.region" content="US-NC" />
-      <meta name="geo.position" content="35.2271;-80.8431" />
-      <meta name="ICBM" content="35.2271, -80.8431" />
-      <meta name="coverage" content="Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne, South Charlotte, Southeast Charlotte, NC" />
-
       {/* Robots meta */}
       {noindex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
-      <meta name="googlebot" content="index, follow" />
-      <meta name="bingbot" content="index, follow" />
 
-      {/* Open Graph / Facebook */}
+      {/* Open Graph */}
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={fullOgUrl} />
+      <meta property="og:url" content={fullCanonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
@@ -113,18 +87,18 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:site_name" content="KorTech Service" />
       <meta property="og:locale" content="en_US" />
 
-      {/* Twitter */}
-      <meta name="twitter:card" content={twitterCard} />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:site" content="@kortechservice" />
-      <meta name="twitter:creator" content="@kortechservice" />
-      
-      {/* Local business specific */}
-      {location && <meta name="geo.placename" content={location} />}
-      {service && <meta name="service" content={service} />}
-      {city && <meta name="geo.placename" content={city} />}
+
+      {/* Local SEO meta tags */}
+      <meta name="geo.region" content="US-NC" />
+      <meta name="geo.position" content="35.2271;-80.8431" />
+      <meta name="ICBM" content="35.2271, -80.8431" />
+      <meta name="coverage" content="Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne, NC" />
 
       {/* Schema.org JSON-LD */}
       {allSchemas.map((s, i) => (

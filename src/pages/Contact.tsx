@@ -90,8 +90,8 @@ ${formData.message}
   return (
     <div className="min-h-screen bg-white" id="contact-page">
       <SEOHead
-        title="Contact KorTech Service | Computer Repair Charlotte NC | Call 704-246-7642 Today"
-        description="Contact us for Computer Repair Charlotte NC. Visit our Sardis Road location or call 704-246-7642. Same-day service available - call today!"
+        title="Contact KorTech Service | Charlotte Computer Repair"
+        description="Contact us for computer repair Charlotte NC. Visit our Sardis Road location or call 704-246-7642. Same-day service available!"
         keywords="contact KorTech Service, computer repair Charlotte NC contact, Charlotte computer repair phone, computer repair near me"
         canonicalUrl="/contact"
         schema={schema}

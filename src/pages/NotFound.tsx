@@ -35,8 +35,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Page Not Found (404) | Computer Repair Charlotte NC | KorTech Service"
-        description="Page not found. Find Computer Repair Charlotte NC services, contact info & more at KorTech Service. Call 704-246-7642 for help today!"
+        title="Page Not Found (404) | KorTech Service Charlotte"
+        description="Page not found. Find computer repair Charlotte NC services, contact info & more at KorTech Service. Call 704-246-7642!"
         canonicalUrl="/404"
       />
 

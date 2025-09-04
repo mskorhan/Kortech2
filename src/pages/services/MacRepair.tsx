@@ -80,8 +80,8 @@ const MacRepair = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Mac Repair Charlotte NC | MacBook & iMac Repair | KorTech Service"
-        description="Expert Mac repair in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. MacBook screen repair, iMac service, data recovery. Call 704-246-7642!"
+        title="Mac Repair Charlotte NC | MacBook & iMac | KorTech"
+        description="Expert Mac repair Charlotte NC. MacBook screen repair, iMac service, data recovery. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
         keywords="Mac repair Charlotte NC, MacBook repair Charlotte, iMac repair, Apple computer repair Charlotte"
         canonicalUrl="/mac-repair"
         schema={schema}

@@ -56,8 +56,8 @@ const Services = () => {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Computer Repair Services Charlotte",
-      "description": "Professional computer repair services in Charlotte, NC. Mac & PC repair, data recovery, virus removal, and IT support.",
+      "name": "Computer Repair Services",
+      "description": "Professional computer repair services in Charlotte, NC. Mac & PC repair, data recovery, virus removal & IT support.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "KorTech Service",
@@ -346,8 +346,8 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-white" id="services-page">
       <SEOHead
-        title="Computer Repair Charlotte NC Services | Expert Mac & PC Repair | KorTech Service"
-        description="Professional Computer Repair Charlotte NC services. Mac & PC repair, data recovery, virus removal & IT support. Call 704-246-7642 today!"
+        title="Computer Repair Services Charlotte NC | KorTech"
+        description="Professional computer repair services Charlotte NC. Mac & PC repair, data recovery, virus removal & IT support. Call 704-246-7642!"
         keywords="computer repair services Charlotte NC, Mac repair Charlotte, PC repair Charlotte, laptop repair Charlotte, virus removal Charlotte"
         canonicalUrl="/services"
         schema={schema}

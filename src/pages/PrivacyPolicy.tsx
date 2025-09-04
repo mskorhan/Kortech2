@@ -21,8 +21,8 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white" id="privacy-policy">
       <SEOHead
-        title="Privacy Policy | Computer Repair Charlotte NC Data Protection | KorTech Service"
-        description="Privacy policy for Computer Repair Charlotte NC services. Learn how we protect your data during repairs. Call 704-246-7642 today!"
+        title="Privacy Policy | KorTech Service Charlotte NC"
+        description="Privacy policy for computer repair Charlotte NC services. Learn how we protect your data during repairs. Call 704-246-7642!"
         canonicalUrl="/privacy-policy"
       />
 

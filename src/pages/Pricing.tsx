@@ -166,8 +166,8 @@ const Pricing = () => {
   return (
     <div className="min-h-screen bg-white" id="pricing-page">
       <SEOHead
-        title="Computer Repair Charlotte NC Pricing | Transparent Rates | KorTech Service"
-        description="Affordable Computer Repair Charlotte NC pricing. IT support plans & service costs. No hidden fees. Call 704-246-7642 for quote today!"
+        title="Computer Repair Pricing Charlotte NC | KorTech"
+        description="Affordable computer repair Charlotte NC pricing. IT support plans & service costs. No hidden fees. Call 704-246-7642!"
         keywords="computer repair pricing Charlotte NC, IT support plans Charlotte, computer repair costs Charlotte, diagnostic fees"
         canonicalUrl="/pricing"
         schema={schema}

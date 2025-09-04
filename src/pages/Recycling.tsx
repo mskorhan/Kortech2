@@ -188,8 +188,8 @@ const Recycling = () => {
   return (
     <div className="min-h-screen bg-white" id="recycling-page">
       <SEOHead
-        title="Free Electronics Recycling Charlotte NC | Computer Disposal | KorTech Service"
-        description="Free electronics recycling Charlotte NC. Environmentally responsible Computer Repair Charlotte NC disposal. Call 704-246-7642 today!"
+        title="Free Electronics Recycling Charlotte NC | KorTech"
+        description="Free electronics recycling Charlotte NC. Environmentally responsible computer disposal. Call 704-246-7642!"
         canonicalUrl="/recycling"
         schema={schema}
       />

@@ -22,8 +22,8 @@ const TermsConditions = () => {
   return (
     <div className="min-h-screen bg-white" id="terms-conditions">
       <SEOHead
-        title="Terms & Conditions | Computer Repair Charlotte NC Services | KorTech Service"
-        description="Terms & conditions for Computer Repair Charlotte NC services. Professional IT support terms. Call 704-246-7642 for service today!"
+        title="Terms & Conditions | KorTech Service Charlotte NC"
+        description="Terms & conditions for computer repair Charlotte NC services. Professional IT support terms. Call 704-246-7642!"
         canonicalUrl="/terms"
         schema={schema}
       />

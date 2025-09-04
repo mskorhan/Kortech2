@@ -80,8 +80,8 @@ const ConsoleRepair = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Gaming Console Repair Charlotte NC | PS5 Xbox Nintendo Switch | KorTech"
-        description="Expert gaming console repair in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. PS5, Xbox, Nintendo Switch HDMI repair. Call 704-246-7642!"
+        title="Gaming Console Repair Charlotte NC | KorTech"
+        description="Expert gaming console repair Charlotte NC. PS5, Xbox, Nintendo Switch HDMI repair. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
         keywords="console repair Charlotte NC, PS5 repair Charlotte, Xbox repair Charlotte, Nintendo Switch repair, gaming console HDMI repair"
         canonicalUrl="/console-repair"
         schema={schema}

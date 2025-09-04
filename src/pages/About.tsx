@@ -113,8 +113,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white" id="about-page">
       <SEOHead
-        title="About KorTech Service | Computer Repair Charlotte NC Since 1998 | Expert Technicians"
-        description="Trusted Computer Repair Charlotte NC since 1998. Professional Mac & PC repair, data recovery & IT support. Call 704-246-7642 today!"
+        title="About KorTech Service | Charlotte Computer Repair"
+        description="Trusted computer repair Charlotte NC since 1998. Professional Mac & PC repair, data recovery & IT support. Call 704-246-7642!"
         keywords="about KorTech Service, computer repair Charlotte NC history, Charlotte computer repair company, trusted computer repair"
         canonicalUrl="/about"
         schema={schema}

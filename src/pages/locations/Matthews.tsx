@@ -121,8 +121,8 @@ const Matthews = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer, Phone & Console Repair in Matthews NC | KorTech Service"
-        description="Expert computer, phone & console repair in Matthews, NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
+        title="Computer Repair Matthews NC | KorTech Service"
+        description="Expert computer repair Matthews NC. Same-day Mac & PC repair, iPhone repair, PS5/Xbox HDMI repair, data recovery. Call 704-246-7642!"
         canonicalUrl="/locations/matthews"
         location="Matthews, NC"
         service="Computer Repair"

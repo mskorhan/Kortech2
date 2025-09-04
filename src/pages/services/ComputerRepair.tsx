@@ -81,8 +81,8 @@ const ComputerRepair = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="Computer Repair Charlotte NC | Expert PC & Mac Repair | KorTech Service"
-        description="Professional computer repair in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. Same-day PC & Mac repair, virus removal. Call 704-246-7642!"
+        title="Computer Repair Charlotte NC | KorTech Service"
+        description="Professional computer repair Charlotte NC. Same-day PC & Mac repair, virus removal. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
         keywords="computer repair Charlotte NC, PC repair Charlotte, Mac repair Charlotte, computer troubleshooting, virus removal Charlotte"
         canonicalUrl="/computer-repair"
         schema={schema}
