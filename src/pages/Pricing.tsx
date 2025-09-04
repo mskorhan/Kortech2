@@ -188,14 +188,11 @@ const Pricing = () => {
             </div>
             
             <h1 className="text-6xl lg:text-7xl font-bold leading-tight" itemProp="headline">
-              Computer Repair Charlotte NC Pricing - Transparent Rates
+              Computer Repair Pricing Charlotte NC - Transparent Rates
             </h1>
             
             <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light">
-              Professional IT support plans at discounted rates. Save up to $1,750/month with our limited-time offer. 
-              View our <a href="/services" className="text-blue-300 hover:text-white font-medium">complete services</a>, 
-              learn <a href="/about" className="text-blue-300 hover:text-white font-medium">about our company</a>, or 
-              <a href="/contact" className="text-blue-300 hover:text-white font-medium">contact us for consultation</a>.
+              Professional IT support plans at discounted rates. Save up to $1,750/month with our limited-time offer.
             </p>
 
             <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-2xl p-6 border border-red-400/30 backdrop-blur-sm">

@@ -135,13 +135,11 @@ const About = () => {
             </div>
             
             <h1 className="text-6xl lg:text-7xl font-bold leading-tight" itemProp="headline">
-              About KorTech Service - Computer Repair Charlotte NC Experts Since 1998
+              About KorTech Service - Charlotte Computer Repair Since 1998
             </h1>
             
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
-              Professional computer repair and IT support serving Charlotte, NC since 1998. 
-              We're your trusted local technology experts. Explore our <a href="/services" className="text-blue-600 hover:text-blue-800 font-medium">complete services</a> or 
-              <a href="/contact" className="text-blue-600 hover:text-blue-800 font-medium">visit our Charlotte location</a> today.
+              Professional computer repair & IT support serving Charlotte, NC since 1998. We're your trusted local technology experts.
             </p>
           </div>
         </div>

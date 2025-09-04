@@ -17,8 +17,8 @@ import {
 const MacRepair = () => {
   const faqs = [
     {
-      question: "How much does Mac repair cost?",
-      answer: "Mac repair costs vary by model and issue. MacBook screen repairs typically range from $300-$600, while other repairs vary. We provide free diagnostics and detailed quotes."
+      question: "How much does Mac repair cost in Charlotte?",
+      answer: "Mac repair costs vary by model and issue. MacBook screen repairs typically range from $300-$600. We provide free diagnostics ($75-$150 value, waived with repair) and detailed quotes."
     },
     {
       question: "Do you repair all Mac models?",
@@ -26,7 +26,7 @@ const MacRepair = () => {
     },
     {
       question: "How long does Mac repair take?",
-      answer: "Most Mac repairs are completed within 1-3 business days depending on parts availability. Simple repairs may be completed same-day."
+      answer: "Most Mac repairs are completed within 1-3 business days at our Charlotte location depending on parts availability. Simple repairs may be completed same-day."
     },
     {
       question: "Do you use genuine Apple parts?",

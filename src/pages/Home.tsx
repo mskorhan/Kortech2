@@ -200,11 +200,11 @@ export default function Home() {
 
               <div className="space-y-6">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight" itemProp="headline">
-                  Professional Computer & Electronics Repair in Charlotte, NC
+                  Computer Repair Charlotte NC - Professional Mac & PC Repair
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                  Expert Mac & PC repair, data recovery, virus removal, and IT support. Same-day service available with free diagnostics. Serving Charlotte, Matthews, Mint Hill, and surrounding areas since 1998.
+                  Expert Mac & PC repair, data recovery, virus removal & IT support. Same-day service with free diagnostics. Serving Charlotte, Matthews, Mint Hill since 1998.
                 </p>
               </div>
               

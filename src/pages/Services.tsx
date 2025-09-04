@@ -368,14 +368,11 @@ const Services = () => {
             </div>
             
             <h1 className="text-6xl lg:text-7xl font-bold leading-tight" itemProp="headline">
-              Computer Repair Charlotte NC Services - Expert Solutions
+              Computer Repair Services Charlotte NC - Expert Solutions
             </h1>
             
             <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light">
-              Professional computer repair and IT support services at our Charlotte location and on-site for local homes and businesses. 
-              Expert technicians, transparent pricing, walk-in service available. Serving Charlotte, Matthews, Mint Hill, Pineville, and Ballantyne.
-              Visit our <a href="/about" className="text-blue-300 hover:text-white font-medium">about page</a> to learn more about our 25+ years of experience, or 
-              <a href="/contact" className="text-blue-300 hover:text-white font-medium">contact us</a> for immediate assistance.
+              Professional computer repair & IT support services at our Charlotte location. Expert technicians, transparent pricing, walk-in service available.
             </p>
           </div>
         </div>

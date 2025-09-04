@@ -19,52 +19,29 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    chunkSizeWarningLimit: 300,
+    chunkSizeWarningLimit: 500,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        passes: 4,
-        unsafe: true,
-        unsafe_comps: true,
-        unsafe_math: true,
-        unsafe_proto: true
+        pure_funcs: ['console.log', 'console.info', 'console.debug']
       },
       mangle: {
-        safari10: true,
-        toplevel: true
+        safari10: true
       },
       format: {
         comments: false
       }
     },
-    cssMinify: 'lightningcss',
+    cssMinify: true,
     reportCompressedSize: false,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          icons: ['lucide-react'],
-          helmet: ['react-helmet-async'],
-          utils: ['./src/utils/analytics', './src/utils/seo', './src/utils/reviews']
-        },
-        // Reduce HTTP requests by optimizing chunk naming
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
-            return `assets/images/[name]-[hash][extname]`;
-          }
-          if (/css/i.test(ext)) {
-            return `assets/css/[name]-[hash][extname]`;
-          }
-          if (/woff2?|ttf|eot/i.test(ext)) {
-            return `assets/fonts/[name]-[hash][extname]`;
-          }
-          return `assets/[name]-[hash][extname]`;
+          icons: ['lucide-react']
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',

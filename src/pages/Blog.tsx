@@ -217,18 +217,11 @@ const Blog = () => {
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Computer Repair Charlotte NC Blog - Expert Tech Tips & Repair Guides
+              Computer Repair Blog Charlotte NC - Expert Tech Tips & Guides
             </h1>
             
             <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-              Expert computer repair tips, gaming console guides, and tech insights from Charlotte's most trusted IT professionals. 
-              Visit our <a href="/services" className="text-blue-300 hover:text-white font-medium">services page</a>, 
-              <a href="/contact" className="text-blue-300 hover:text-white font-medium">contact us</a> for personalized help, or 
-              learn <a href="/about" className="text-blue-300 hover:text-white font-medium">about our expertise</a>.
-            </p>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed mt-4">
-              For additional tech resources, visit <a href="https://www.pcmag.com/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white font-medium">PC Magazine</a> 
-              and <a href="https://www.techrepublic.com/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white font-medium">TechRepublic</a>.
+              Expert computer repair tips, gaming console guides & tech insights from Charlotte's most trusted IT professionals.
             </p>
           </div>
         </div>

@@ -428,38 +428,11 @@
 /* Mobile performance optimizations */
 @media (max-width: 768px) {
   /* Disable heavy animations on mobile */
-  .animate-pulse,
-  .animate-bounce,
-  .animate-spin {
-    animation: none !important;
-  }
-  
-  /* Disable filters and effects that impact performance */
-  .filter,
-  .backdrop-blur-sm,
-  .backdrop-blur-md {
-    filter: none !important;
-    backdrop-filter: none !important;
-    background-color: rgba(255, 255, 255, 0.95) !important;
-  }
-  
   /* Simplify transforms for better performance */
   .transform,
   .hover\:scale-105:hover,
   .hover\:-translate-y-1:hover {
     transform: none !important;
-  }
-  
-  /* Optimize gradients */
-  .bg-gradient-to-br,
-  .bg-gradient-to-r {
-    background: var(--brand-primary) !important;
-  }
-  
-  /* Reduce shadow complexity */
-  .shadow-xl,
-  .shadow-2xl {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
   }
 }
 

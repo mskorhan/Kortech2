@@ -20,8 +20,8 @@ import {
 const DataRecovery = () => {
   const faqs = [
     {
-      question: "How much does data recovery cost?",
-      answer: "Data recovery costs vary based on the type of failure and amount of data. We provide free diagnostics and detailed quotes for all data recovery services."
+      question: "How much does data recovery cost in Charlotte?",
+      answer: "Data recovery costs vary based on the type of failure and amount of data. We provide free diagnostics ($75-$150 value, waived with recovery) and detailed quotes for all data recovery services."
     },
     {
       question: "What types of data can you recover?",
@@ -29,7 +29,7 @@ const DataRecovery = () => {
     },
     {
       question: "How long does data recovery take?",
-      answer: "Simple software-based recoveries take 1-3 days. Complex hardware recoveries requiring cleanroom work can take 5-10 business days depending on the extent of damage."
+      answer: "Simple software-based recoveries take 1-3 days at our Charlotte location. Complex hardware recoveries can take 5-10 business days depending on the extent of damage."
     },
     {
       question: "What is your success rate for data recovery?",

@@ -21,16 +21,16 @@ const ConsoleRepair = () => {
       answer: "We repair all major gaming consoles including PlayStation 5, Xbox Series X/S, Nintendo Switch, and older console models. We specialize in HDMI port repairs and other common issues."
     },
     {
-      question: "How much does console repair cost?",
-      answer: "Console repair costs vary by issue and model. HDMI port repairs typically range from $129-$199. We provide free diagnostics and detailed quotes before any work begins."
+      question: "How much does console repair cost in Charlotte?",
+      answer: "Console repair costs vary by issue and model. HDMI port repairs typically range from $129-$199. We provide free diagnostics ($75-$150 value, waived with repair) and detailed quotes."
     },
     {
       question: "How long does console repair take?",
-      answer: "Most console repairs are completed within 1-3 business days. HDMI port repairs and common issues can often be completed same-day or next-day."
+      answer: "Most console repairs are completed within 1-3 business days at our Charlotte location. HDMI port repairs and common issues can often be completed same-day or next-day."
     },
     {
       question: "Do you offer warranty on console repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This warranty covers manufacturing defects but does not include accidental damage."
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
     },
     {
       question: "Can you fix water-damaged gaming consoles?",

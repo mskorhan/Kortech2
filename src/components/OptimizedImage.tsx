@@ -26,7 +26,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (priority) return; // Skip intersection observer for priority images
+    if (priority) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,7 +37,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       },
       { 
         threshold: 0.1,
-        rootMargin: '50px' // Start loading 50px before the image comes into view
+        rootMargin: '50px'
       }
     );
 
@@ -56,14 +56,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     console.warn(`Failed to load image: ${src}`);
   };
 
-  // Generate WebP and AVIF sources
   const webpSrc = src.includes('.webp') ? src : src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
   const avifSrc = src.includes('.avif') ? src : src.replace(/\.(jpg|jpeg|png|webp)$/i, '.avif');
   
-  // Generate srcset for different resolutions
   const generateSrcSet = (baseSrc: string) => {
     if (baseSrc.includes('pexels.com')) {
-      // For Pexels images, use their URL parameters for different sizes
       const baseUrl = baseSrc.split('?')[0];
       return `${baseUrl}?w=${Math.round(width * 0.5)}&h=${Math.round(height * 0.5)} ${Math.round(width * 0.5)}w, ${baseUrl}?w=${width}&h=${height} ${width}w, ${baseUrl}?w=${Math.round(width * 1.5)}&h=${Math.round(height * 1.5)} ${Math.round(width * 1.5)}w`;
     }
@@ -87,21 +84,18 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       
       {shouldShowImage && (
         <picture>
-          {/* AVIF source for best compression */}
           <source 
             srcSet={generateSrcSet(avifSrc)} 
             type="image/avif" 
             sizes={sizes} 
           />
           
-          {/* WebP source for modern browsers */}
           <source 
             srcSet={generateSrcSet(webpSrc)} 
             type="image/webp" 
             sizes={sizes} 
           />
           
-          {/* Fallback for older browsers */}
           <img
             src={src}
             alt={alt}

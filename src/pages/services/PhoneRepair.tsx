@@ -17,12 +17,12 @@ import {
 const PhoneRepair = () => {
   const faqs = [
     {
-      question: "How much does phone screen repair cost?",
+      question: "How much does phone screen repair cost in Charlotte?",
       answer: "Phone screen repair costs vary by device model. iPhone screen repairs typically range from $129-$299, Android screens from $99-$249. We provide free diagnostics and detailed quotes."
     },
     {
       question: "How long does phone repair take?",
-      answer: "Most phone repairs are completed within 1-2 hours. Screen replacements and battery services can often be done while you wait."
+      answer: "Most phone repairs are completed within 1-2 hours at our Charlotte location. Screen replacements and battery services can often be done while you wait."
     },
     {
       question: "What phone brands do you repair?",
@@ -30,7 +30,7 @@ const PhoneRepair = () => {
     },
     {
       question: "Do you offer warranty on phone repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This warranty covers manufacturing defects but does not include accidental damage."
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
     },
     {
       question: "Can you repair water-damaged phones?",

@@ -18,12 +18,12 @@ import {
 const ComputerRepair = () => {
   const faqs = [
     {
-      question: "How much does computer repair cost in Charlotte?",
-      answer: "Computer repair costs vary by issue type. We provide free diagnostics and transparent pricing. Most repairs range from $99-$299 depending on the problem and parts needed."
+      question: "How much does computer repair cost in Charlotte NC?",
+      answer: "Computer repair costs vary by issue type. We provide free diagnostics ($75-$150 value, waived with repair) and transparent pricing. Most repairs range from $99-$299."
     },
     {
       question: "Do you offer same-day computer repair service?",
-      answer: "Yes, we offer same-day service for most common computer issues. Walk-ins welcome or call ahead to ensure availability."
+      answer: "Yes, we offer same-day service for most common computer issues at our Charlotte location. Walk-ins welcome or call ahead to ensure availability."
     },
     {
       question: "What computer brands do you repair?",
@@ -31,7 +31,7 @@ const ComputerRepair = () => {
     },
     {
       question: "Do you provide warranty on computer repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This warranty covers manufacturing defects but does not include accidental damage or liquid damage."
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
     },
     {
       question: "Can you fix slow computer performance?",

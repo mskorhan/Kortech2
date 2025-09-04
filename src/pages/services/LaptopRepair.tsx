@@ -17,12 +17,12 @@ import {
 const LaptopRepair = () => {
   const faqs = [
     {
-      question: "How much does laptop repair cost?",
-      answer: "Laptop repair costs vary by issue and model. Screen repairs typically range from $150-$400, while other repairs vary. We provide free diagnostics and transparent quotes."
+      question: "How much does laptop screen repair cost in Charlotte?",
+      answer: "Laptop screen repair costs vary by model. Screen repairs typically range from $150-$400. We provide free diagnostics ($75-$150 value, waived with repair) and transparent quotes."
     },
     {
       question: "How long does laptop repair take?",
-      answer: "Most laptop repairs are completed within 1-2 business days. Screen replacements and simple repairs can often be done same-day."
+      answer: "Most laptop repairs are completed within 1-2 business days at our Charlotte location. Screen replacements and simple repairs can often be done same-day."
     },
     {
       question: "What laptop brands do you repair?",
@@ -30,7 +30,7 @@ const LaptopRepair = () => {
     },
     {
       question: "Do you offer warranty on laptop repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This warranty covers manufacturing defects but does not include accidental damage."
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
     },
     {
       question: "Can you repair water-damaged laptops?",

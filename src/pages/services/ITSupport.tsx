@@ -20,8 +20,8 @@ import {
 const BusinessITSupport = () => {
   const faqs = [
     {
-      question: "What business IT support services do you provide?",
-      answer: "We provide comprehensive business IT support including on-site network setup, computer maintenance, server support, and ongoing technical assistance for businesses in Charlotte, Matthews, Mint Hill, Pineville, and Ballantyne."
+      question: "What business IT support services do you provide in Charlotte?",
+      answer: "We provide comprehensive business IT support including on-site network setup, computer maintenance, server support & ongoing technical assistance for businesses in Charlotte, Matthews, Mint Hill, Pineville & Ballantyne."
     },
     {
       question: "Do you offer on-site business support?",
