@@ -49,14 +49,24 @@ export const deferNonCriticalJS = () => {
 
 export const measureCoreWebVitals = () => {
   // Measure and report Core Web Vitals
-  if (typeof window !== 'undefined' && 'web-vitals' in window) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(console.log);
-      getFID(console.log);
-      getFCP(console.log);
-      getLCP(console.log);
-      getTTFB(console.log);
+  if (typeof window !== 'undefined') {
+    // Simple performance measurement without external dependency
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.entryType === 'largest-contentful-paint') {
+          console.log('LCP:', entry.startTime);
+        }
+        if (entry.entryType === 'first-input') {
+          console.log('FID:', entry.processingStart - entry.startTime);
+        }
+      }
     });
+    
+    try {
+      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+    } catch (error) {
+      console.warn('Performance observer not supported');
+    }
   }
 };
 

@@ -127,7 +127,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="geo.region" content="US-NC" />
       <meta name="geo.position" content="35.2271;-80.8431" />
       <meta name="ICBM" content="35.2271, -80.8431" />
-      <meta name="coverage" content="Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne, NC" />
+      <meta name="coverage" content="Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne, South Charlotte, Southeast Charlotte, NC" />
 
       {/* Schema.org JSON-LD */}
       {allSchemas.map((s, i) => (
