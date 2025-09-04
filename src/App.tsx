@@ -64,7 +64,7 @@ import NotFound from './pages/NotFound';
 
 // New Service Pages
 import ComputerRepair from './pages/services/ComputerRepair';
-import LaptopRepair from './pages/services/LaptopRepair';
+import MainLaptopRepair from './pages/services/LaptopRepair';
 import MacRepair from './pages/services/MacRepair';
 import ConsoleRepair from './pages/services/ConsoleRepair';
 import PhoneRepair from './pages/services/PhoneRepair';
@@ -133,7 +133,7 @@ function App() {
           <Route path="/gaming-pc-builds" element={<GamingPCBuilds />} />
           <Route path="/electronics-recycling" element={<ElectronicsRecycling />} />
           
-          <Route path="/laptop-repair" element={<LaptopRepair />} />
+          <Route path="/laptop-repair" element={<MainLaptopRepair />} />
           {/* Service Landing Pages */}
           <Route path="/ps5-hdmi-repair" element={<PS5HDMIRepair />} />
           <Route path="/xbox-hdmi-repair" element={<XboxHDMIRepair />} />

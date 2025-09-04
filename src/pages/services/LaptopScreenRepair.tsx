@@ -363,3 +363,5 @@ const LaptopScreenRepair = () => {
     </div>
   );
 };
+
+export default LaptopScreenRepair;
