@@ -152,7 +152,7 @@ function App() {
           
           {/* New Service Pages with Clean URLs */}
           <Route path="/computer-repair" element={<ComputerRepair />} />
-          <Route path="/laptop-repair" element={<MainLaptopRepair />} />
+          <Route path="/laptop-repair" element={<LaptopRepair />} />
           <Route path="/mac-repair" element={<MacRepair />} />
           <Route path="/console-repair" element={<ConsoleRepair />} />
           <Route path="/phone-repair" element={<PhoneRepair />} />
