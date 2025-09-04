@@ -18,31 +18,31 @@ const PricingTransparency: React.FC<PricingTransparencyProps> = ({
   const defaultServices = [
     {
       name: "Computer Diagnostic",
-      priceRange: "$75-$150",
+      priceRange: "Call/Text For Quote",
       description: "Complete system analysis and problem identification",
       turnaround: "Same Day"
     },
     {
       name: "Virus Removal",
-      priceRange: "$99-$149",
+      priceRange: "Call/Text For Quote",
       description: "Complete malware removal and security setup",
       turnaround: "2-4 Hours"
     },
     {
       name: "Screen Repair",
-      priceRange: "$129-$299",
+      priceRange: "Call/Text For Quote",
       description: "Laptop and mobile device screen replacement",
       turnaround: "Same Day"
     },
     {
       name: "Data Recovery",
-      priceRange: "$199-$499",
+      priceRange: "Call/Text For Quote",
       description: "Professional data recovery from failed drives",
       turnaround: "1-3 Days"
     },
     {
       name: "HDMI Port Repair",
-      priceRange: "$129-$179",
+      priceRange: "Call/Text For Quote",
       description: "Gaming console HDMI port replacement",
       turnaround: "1-2 Days"
     }
@@ -71,7 +71,7 @@ const PricingTransparency: React.FC<PricingTransparencyProps> = ({
             <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-lg font-bold text-slate-800">{service.name}</h3>
-                <div className="text-xl font-bold text-green-600">{service.priceRange}</div>
+                <div className="text-lg font-bold text-blue-600">{service.priceRange}</div>
               </div>
               <p className="text-slate-600 text-sm mb-3">{service.description}</p>
               <div className="flex items-center space-x-2 text-sm text-slate-500">
@@ -80,6 +80,18 @@ const PricingTransparency: React.FC<PricingTransparencyProps> = ({
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <a
+            href="sms:980-888-5300"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center space-x-2 transition-all duration-300 shadow-lg transform hover:scale-105"
+          >
+            <span>📱 Text/Call 980-888-5300 for Quote</span>
+          </a>
+          <p className="text-sm text-slate-600 mt-3">
+            Free diagnostic • Same-day service • Transparent pricing
+          </p>
         </div>
 
         {showWarranty && (
