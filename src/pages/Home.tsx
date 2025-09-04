@@ -76,9 +76,10 @@ export default function Home() {
       "serviceArea": [
         "Charlotte, NC", 
         "Matthews, NC", 
-        "Mint Hill, NC", 
+        "Mint Hill, NC",
         "Indian Trail, NC", 
-        "Waxhaw, NC", 
+        "Monroe, NC",
+        "Waxhaw, NC",
         "Pineville, NC", 
         "Ballantyne, NC"
       ],
@@ -195,8 +196,8 @@ export default function Home() {
                   Professional Computer & Electronics Repair in Charlotte, NC
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                  Expert Mac & PC repair, data recovery, virus removal, and IT support. Same-day service available with free diagnostics. Serving Charlotte, Matthews, Mint Hill, and surrounding areas since 1998.
+                <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto lg:mx-0 font-light leading-relaxed">
+                  Expert Mac & PC repair, data recovery, virus removal, and IT support. Same-day service available with free diagnostics. Serving Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne and surrounding areas since 1998.
                 </p>
               </div>
               
