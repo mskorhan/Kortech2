@@ -1,5 +1,6 @@
 import React from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
 import { 
   ArrowRight,
   CheckCircle, FileText, Shield, Truck, Phone, Mail, 
@@ -9,24 +10,17 @@ import {
 } from 'lucide-react';
 
 const TermsConditions = () => {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Terms and Conditions",
-      "description": "Terms and conditions for KorTech Service computer repair and IT support services in Charlotte, NC.",
-      "url": "https://kortechservice.com/terms"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white" id="terms-conditions">
-      <SEOHead
+      <Seo
         title="Terms & Conditions | KorTech Service Charlotte NC"
         description="Terms & conditions for computer repair Charlotte NC services. Professional IT support terms. Call 704-246-7642!"
-        canonicalUrl="/terms"
-        schema={schema}
+        canonical="/terms"
       />
+      
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Terms & Conditions', url: '/terms' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-100 to-blue-50 text-slate-800 py-20 relative overflow-hidden">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import { createBreadcrumbSchema } from '../seo/jsonld';
 import { 
   Home, 
   Search, 
@@ -14,6 +15,8 @@ import {
 } from 'lucide-react';
 
 const NotFound = () => {
+  const schema = [createBreadcrumbSchema([{ name: 'Home', url: '/' }])];
+
   const popularPages = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'Computer Repair Services', path: '/services', icon: Settings },
@@ -34,10 +37,12 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead
+      <Seo
         title="Page Not Found (404) | KorTech Service Charlotte"
         description="Page not found. Find computer repair Charlotte NC services, contact info & more at KorTech Service. Call 704-246-7642!"
-        canonicalUrl="/404"
+        canonical="/404"
+        noindex={true}
+        jsonLd={schema}
       />
 
       {/* Hero Section */}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
+import { createServiceSchema } from '../seo/jsonld';
 import { 
   CheckCircle, 
   X, 
@@ -22,18 +24,7 @@ import {
 } from 'lucide-react';
 
 const Pricing = () => {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "IT Support Plans Charlotte",
-      "description": "Professional IT support plans and computer repair pricing in Charlotte, NC. Transparent pricing with no hidden fees.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service"
-      }
-    }
-  ];
+  const schema = [createServiceSchema("IT Support Plans", "Professional IT support plans and computer repair pricing in Charlotte, NC. Transparent pricing with no hidden fees.")];
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   
@@ -165,13 +156,16 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-white" id="pricing-page">
-      <SEOHead
+      <Seo
         title="Computer Repair Pricing Charlotte NC | KorTech"
         description="Affordable computer repair Charlotte NC pricing. IT support plans & service costs. No hidden fees. Call 704-246-7642!"
-        keywords="computer repair pricing Charlotte NC, IT support plans Charlotte, computer repair costs Charlotte, diagnostic fees"
-        canonicalUrl="/pricing"
-        schema={schema}
+        canonical="/pricing"
+        jsonLd={schema}
       />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Pricing', url: '/pricing' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-brand-dark text-white py-32 relative overflow-hidden">

@@ -1,5 +1,7 @@
 import React from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
+import { createServiceSchema, createFAQSchema } from '../seo/jsonld';
 import { 
   CheckCircle, 
   Star, 
@@ -345,13 +347,16 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-white" id="services-page">
-      <SEOHead
+      <Seo
         title="Computer Repair Services Charlotte NC | KorTech"
         description="Professional computer repair services Charlotte NC. Mac & PC repair, data recovery, virus removal & IT support. Call 704-246-7642!"
-        keywords="computer repair services Charlotte NC, Mac repair Charlotte, PC repair Charlotte, laptop repair Charlotte, virus removal Charlotte"
-        canonicalUrl="/services"
-        schema={schema}
+        canonical="/services"
+        jsonLd={schema}
       />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Services', url: '/services' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-[#071930] text-white py-32 relative overflow-hidden">

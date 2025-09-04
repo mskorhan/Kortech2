@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { reviewCount, getRotatingReview } from '../utils/reviews';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
+import { createLocalBusinessSchema } from '../seo/jsonld';
 // import GooglePlacesAPI from '../components/GooglePlacesAPI';
 import { 
   Phone, 
@@ -18,15 +20,7 @@ import {
 } from 'lucide-react';
 
 const Contact = () => {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact KorTech Service - Charlotte Computer Repair",
-      "description": "Contact KorTech Service for professional computer repair in Charlotte, NC. Visit our shop, call, or text for same-day service.",
-      "url": "https://kortechservice.com/contact"
-    }
-  ];
+  const schema = [createLocalBusinessSchema()];
 
   const [formData, setFormData] = useState({
     name: '', 
@@ -89,13 +83,16 @@ ${formData.message}
 
   return (
     <div className="min-h-screen bg-white" id="contact-page">
-      <SEOHead
+      <Seo
         title="Contact KorTech Service | Charlotte Computer Repair"
         description="Contact us for computer repair Charlotte NC. Visit our Sardis Road location or call 704-246-7642. Same-day service available!"
-        keywords="contact KorTech Service, computer repair Charlotte NC contact, Charlotte computer repair phone, computer repair near me"
-        canonicalUrl="/contact"
-        schema={schema}
+        canonical="/contact"
+        jsonLd={schema}
       />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Contact', url: '/contact' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-100 to-blue-50 text-slate-800 py-32 relative overflow-hidden">

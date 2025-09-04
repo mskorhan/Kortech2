@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import { createLocalBusinessSchema } from '../seo/jsonld';
+import { SITE } from '../seo/config';
 import { 
   CheckCircle, 
   Star, 
@@ -32,99 +34,7 @@ import PricingTransparency from '../components/PricingTransparency';
 // import GooglePlacesAPI from '../components/GooglePlacesAPI';
 
 export default function Home() {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "KorTech Service",
-      "description": "Professional computer repair, Mac & PC repair, virus removal, data recovery & IT support in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, Ballantyne. Call 704-246-7642!",
-      "url": "https://kortechservice.com",
-      "telephone": "704-246-7642",
-      "hasMap": "https://www.google.com/maps/place/Kortech+Service/@35.14047,-80.7400749,17z",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1721 Sardis Rd N, Suite 7A",
-        "addressLocality": "Charlotte",
-        "addressRegion": "NC",
-        "postalCode": "28270",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "35.2271",
-        "longitude": "-80.8431"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "11:00",
-          "closes": "16:00"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "96"
-      },
-      "serviceArea": [
-        "Charlotte, NC", 
-        "Matthews, NC", 
-        "Mint Hill, NC", 
-        "Indian Trail, NC", 
-        "Waxhaw, NC", 
-        "Pineville, NC", 
-        "Ballantyne, NC"
-      ],
-      "sameAs": [
-        "https://www.facebook.com/KortechService/",
-        "https://www.instagram.com/kortechservices",
-        "https://twitter.com/kortechservice",
-        "https://www.linkedin.com/company/kortechservice",
-        "https://www.youtube.com/@kortechservice",
-        "https://g.page/kortechservice"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Computer Repair Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Computer Repair",
-              "description": "Professional Mac and PC repair services"
-            },
-            "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Indian Trail, NC", "Waxhaw, NC", "Pineville, NC", "Ballantyne, NC"]
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Data Recovery",
-              "description": "Professional data recovery from failed drives"
-            },
-            "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Indian Trail, NC", "Waxhaw, NC", "Pineville, NC", "Ballantyne, NC"]
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Gaming Console Repair",
-              "description": "PS5, Xbox, Nintendo Switch HDMI and component repair"
-            },
-            "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Indian Trail, NC", "Waxhaw, NC", "Pineville, NC", "Ballantyne, NC"]
-          }
-        ]
-      }
-    }
-  ];
+  const schema = [createLocalBusinessSchema()];
 
   const services = [
     {
@@ -170,12 +80,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
-      <SEOHead
+      <Seo
         title="Computer Repair Charlotte NC | KorTech Service"
         description="Expert computer repair Charlotte NC since 1998. Same-day Mac & PC repair, data recovery & virus removal. Call 704-246-7642 for free quote!"
-        keywords="computer repair Charlotte NC, Mac repair Charlotte, PC repair Charlotte, virus removal Charlotte, data recovery Charlotte, IT support Charlotte"
-        canonicalUrl="/"
-        schema={schema}
+        canonical="/"
+        jsonLd={schema}
       />
       
       <StickyCTA showOnMobile={true} />

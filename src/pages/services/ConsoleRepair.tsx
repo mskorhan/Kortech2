@@ -1,7 +1,9 @@
 import React from 'react';
-import SEOHead from '../../components/SEOHead';
-import ServiceCTA from '../../components/ServiceCTA';
-import FAQSection from '../../components/FAQSection';
+import Seo from '../../seo/Seo';
+import Breadcrumb from '../../components/Breadcrumb';
+import FAQ from '../../components/FAQ';
+import { createServiceSchema, createFAQSchema } from '../../seo/jsonld';
+import { SITE } from '../../seo/config';
 import { 
   Gamepad2, 
   Wrench, 
@@ -21,71 +23,43 @@ const ConsoleRepair = () => {
       answer: "We repair all major gaming consoles including PlayStation 5, Xbox Series X/S, Nintendo Switch, and older console models. We specialize in HDMI port repairs and other common issues."
     },
     {
-      question: "How much does console repair cost in Charlotte?",
-      answer: "Console repair costs vary by issue and model. HDMI port repairs typically range from $129-$199. We provide free diagnostics ($75-$150 value, waived with repair) and detailed quotes."
+      question: "How much does console repair cost?",
+      answer: "Console repair costs vary by issue and model. HDMI port repairs typically range from $129-$199. We provide free diagnostics and detailed quotes."
     },
     {
       question: "How long does console repair take?",
-      answer: "Most console repairs are completed within 1-3 business days at our Charlotte location. HDMI port repairs and common issues can often be completed same-day or next-day."
+      answer: "Most console repairs are completed within 1-3 business days. HDMI port repairs and common issues can often be completed same-day or next-day."
+    },
+    {
+      question: "What areas do you serve for console repair?",
+      answer: `We provide gaming console repair services throughout ${SITE.AREAS.join(', ')} and surrounding areas.`
     },
     {
       question: "Do you offer warranty on console repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
-    },
-    {
-      question: "Can you fix water-damaged gaming consoles?",
-      answer: "Yes, we specialize in water damage repair for gaming consoles. Bring your console in immediately for the best chance of recovery."
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This covers manufacturing defects but not accidental damage."
     }
   ];
 
   const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Gaming Console Repair Services",
-      "description": "Professional gaming console repair services for PlayStation, Xbox, Nintendo Switch, and other gaming systems. Expert HDMI port repair and component replacement.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        },
-        "telephone": "704-246-7642"
-      },
-      "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Indian Trail, NC", "Waxhaw, NC", "Pineville, NC", "Ballantyne, NC"],
-      "offers": {
-        "@type": "Offer",
-        "availability": "InStock",
-        "description": "Professional gaming console repair services"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    }
+    createServiceSchema("Gaming Console Repair Services", "Professional gaming console repair services for PlayStation, Xbox, Nintendo Switch, and other gaming systems. Expert HDMI port repair and component replacement."),
+    createFAQSchema(faqs)
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead
+      <Seo
         title="Gaming Console Repair Charlotte NC | KorTech"
         description="Expert gaming console repair Charlotte NC. PS5, Xbox, Nintendo Switch HDMI repair. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
-        keywords="console repair Charlotte NC, PS5 repair Charlotte, Xbox repair Charlotte, Nintendo Switch repair, gaming console HDMI repair"
-        canonicalUrl="/console-repair"
-        schema={schema}
+        canonical="/console-repair"
+        jsonLd={schema}
       />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[
+          { name: 'Services', url: '/services' },
+          { name: 'Console Repair', url: '/console-repair' }
+        ]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-purple-900 to-blue-900 text-white py-20 relative overflow-hidden">
@@ -110,6 +84,13 @@ const ConsoleRepair = () => {
               <p className="text-xl text-gray-200 leading-relaxed">
                 Professional gaming console repair services in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, and Ballantyne. 
                 Expert PS5, Xbox, and Nintendo Switch repair with fast turnaround.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our gaming console repair specialists fix all types of issues including HDMI port damage, disc drive problems, power issues, 
+                overheating, and controller malfunctions. We work on all major gaming systems including PlayStation 5, Xbox Series X/S, 
+                Nintendo Switch, and older console models. Using quality replacement parts and professional repair techniques, we get your 
+                gaming system back up and running quickly with competitive pricing and reliable service.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -248,14 +229,31 @@ const ConsoleRepair = () => {
       </section>
 
       {/* Service CTA */}
-      <ServiceCTA 
-        service="Gaming Console Repair" 
-        price="Call/Text For Quote"
-        urgentText="Same-Day Console Repair Available"
-      />
+      <section className="bg-gradient-to-r from-purple-600 to-blue-800 text-white rounded-2xl p-8 my-12">
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl font-bold">Need Console Repair?</h3>
+          <p className="text-xl text-purple-100">
+            Professional repair service in Charlotte, NC • Call/Text For Quote
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <a
+              href={`tel:${SITE.PHONE}`}
+              className="bg-white text-purple-600 hover:bg-purple-50 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Call Now</span>
+            </a>
+            <a
+              href={`sms:${SITE.SMS}`}
+              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Text Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} title="Gaming Console Repair FAQ" />
+      <FAQ faqs={faqs} title="Gaming Console Repair FAQ" />
 
       {/* Related Services */}
       <section className="py-16 bg-white">

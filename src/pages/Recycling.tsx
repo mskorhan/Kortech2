@@ -1,5 +1,7 @@
 import React from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
+import { createServiceSchema } from '../seo/jsonld';
 import { 
   Recycle, 
   Leaf, 
@@ -20,32 +22,7 @@ import {
 } from 'lucide-react';
 
 const Recycling = () => {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Free Electronics Recycling",
-      "description": "Free electronics recycling service in Charlotte, NC. Environmentally responsible disposal of computers, phones, and electronics.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        },
-        "telephone": "704-246-7642"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free electronics recycling service"
-      }
-    }
-  ];
+  const schema = [createServiceSchema("Free Electronics Recycling", "Free electronics recycling service. Environmentally responsible disposal of computers, phones, and electronics.")];
 
   const acceptedItems = [
     { 
@@ -187,12 +164,16 @@ const Recycling = () => {
 
   return (
     <div className="min-h-screen bg-white" id="recycling-page">
-      <SEOHead
+      <Seo
         title="Free Electronics Recycling Charlotte NC | KorTech"
         description="Free electronics recycling Charlotte NC. Environmentally responsible computer disposal. Call 704-246-7642!"
-        canonicalUrl="/recycling"
-        schema={schema}
+        canonical="/recycling"
+        jsonLd={schema}
       />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Electronics Recycling', url: '/recycling' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-[#071930] text-white py-32 relative overflow-hidden">

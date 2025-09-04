@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
 import { 
   Calendar, User, ArrowRight, BookOpen, Gamepad2, HardDrive, Shield, 
   Monitor, AlertTriangle, Smartphone, Cpu, Tv, Database, Zap, Wrench
@@ -195,12 +196,16 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-white" id="blog-page">
-      <SEOHead
+      <Seo
         title="Computer Repair Blog Charlotte NC | KorTech"
         description="Expert computer repair Charlotte NC tips, gaming console guides & tech insights from trusted IT professionals. Call 704-246-7642!"
-        canonicalUrl="/blog"
-        schema={schema}
+        canonical="/blog"
+        jsonLd={schema}
       />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Blog', url: '/blog' }]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 to-blue-900 text-white py-20 relative overflow-hidden" id="blog-hero">

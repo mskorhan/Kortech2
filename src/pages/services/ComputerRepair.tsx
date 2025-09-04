@@ -1,7 +1,9 @@
 import React from 'react';
-import SEOHead from '../../components/SEOHead';
-import ServiceCTA from '../../components/ServiceCTA';
-import FAQSection from '../../components/FAQSection';
+import Seo from '../../seo/Seo';
+import Breadcrumb from '../../components/Breadcrumb';
+import FAQ from '../../components/FAQ';
+import { createServiceSchema, createFAQSchema } from '../../seo/jsonld';
+import { SITE } from '../../seo/config';
 import { 
   Monitor, 
   Wrench, 
@@ -18,75 +20,47 @@ import {
 const ComputerRepair = () => {
   const faqs = [
     {
-      question: "How much does computer repair cost in Charlotte NC?",
-      answer: "Computer repair costs vary by issue type. We provide free diagnostics ($75-$150 value, waived with repair) and transparent pricing. Most repairs range from $99-$299."
+      question: "How much does computer repair cost in Charlotte?",
+      answer: "Computer repair costs vary by issue type. We provide free diagnostics and transparent pricing. Most repairs range from $99-$299 depending on the problem."
     },
     {
-      question: "Do you offer same-day computer repair service?",
-      answer: "Yes, we offer same-day service for most common computer issues at our Charlotte location. Walk-ins welcome or call ahead to ensure availability."
+      question: "Do you repair all computer brands in Charlotte?",
+      answer: "Yes, we repair all major computer brands including Dell, HP, Lenovo, ASUS, Acer, and custom-built PCs. Our technicians are experienced with all operating systems."
     },
     {
-      question: "What computer brands do you repair?",
-      answer: "We repair all major computer brands including Dell, HP, Lenovo, ASUS, Acer, and custom-built PCs. Our technicians are experienced with all operating systems."
+      question: "How long does computer repair take?",
+      answer: "Most computer repairs are completed within 1-2 business days. Simple issues like virus removal can often be completed same-day."
     },
     {
-      question: "Do you provide warranty on computer repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
+      question: "What areas do you serve for computer repair?",
+      answer: `We provide computer repair services throughout ${SITE.AREAS.join(', ')} and surrounding areas with pickup and delivery available.`
     },
     {
-      question: "Can you fix slow computer performance?",
-      answer: "Absolutely! We diagnose and fix slow performance issues including virus removal, hardware upgrades, software optimization, and SSD installations."
+      question: "Do you offer warranty on computer repairs?",
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This covers manufacturing defects but not accidental damage or misuse."
     }
   ];
 
   const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Computer Repair Services",
-      "description": "Professional computer repair services for all major brands. Expert diagnosis, hardware repair, software troubleshooting, and performance optimization.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        },
-        "telephone": "704-246-7642"
-      },
-      "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Indian Trail, NC", "Waxhaw, NC", "Pineville, NC", "Ballantyne, NC"],
-      "offers": {
-        "@type": "Offer",
-        "availability": "InStock",
-        "description": "Professional computer repair services"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    }
+    createServiceSchema("Computer Repair Services", "Professional computer repair services for all major brands. Expert diagnosis, hardware repair, software troubleshooting, and performance optimization."),
+    createFAQSchema(faqs)
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead
+      <Seo
         title="Computer Repair Charlotte NC | KorTech Service"
         description="Professional computer repair Charlotte NC. Same-day PC & Mac repair, virus removal. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
-        keywords="computer repair Charlotte NC, PC repair Charlotte, Mac repair Charlotte, computer troubleshooting, virus removal Charlotte"
-        canonicalUrl="/computer-repair"
-        schema={schema}
+        canonical="/computer-repair"
+        jsonLd={schema}
       />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[
+          { name: 'Services', url: '/services' },
+          { name: 'Computer Repair', url: '/computer-repair' }
+        ]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-20 relative overflow-hidden">
@@ -111,6 +85,13 @@ const ComputerRepair = () => {
               <p className="text-xl text-gray-200 leading-relaxed">
                 Professional computer repair services in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, and Ballantyne. 
                 Expert PC & Mac repair, virus removal, and performance optimization with same-day service available.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our experienced technicians diagnose and repair all types of computer problems at our convenient Charlotte location. 
+                From hardware failures to software issues, we provide comprehensive solutions for desktop computers, workstations, 
+                and all-in-one systems. We serve customers throughout the Charlotte metro area including Matthews, Mint Hill, 
+                Indian Trail, Waxhaw, Pineville, and Ballantyne with same-day service available for most common issues.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -190,6 +171,13 @@ const ComputerRepair = () => {
       {/* Computer Issues We Fix */}
       <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <p className="text-slate-600">
+              We proudly serve computer repair customers throughout {SITE.AREAS.join(', ')} and surrounding areas. 
+              Our Charlotte location provides convenient access for all your computer repair needs.
+            </p>
+          </div>
+          
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-800 mb-4">
               Computer Problems We Fix
@@ -294,14 +282,31 @@ const ComputerRepair = () => {
       </section>
 
       {/* Service CTA */}
-      <ServiceCTA 
-        service="Computer Repair" 
-        price="Call/Text For Quote"
-        urgentText="Same-Day Computer Repair Available"
-      />
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl p-8 my-12">
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl font-bold">Need Computer Repair?</h3>
+          <p className="text-xl text-blue-100">
+            Professional repair service in Charlotte, NC • Call/Text For Quote
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <a
+              href={`tel:${SITE.PHONE}`}
+              className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Call Now</span>
+            </a>
+            <a
+              href={`sms:${SITE.SMS}`}
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Text Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} title="Computer Repair FAQ" />
+      <FAQ faqs={faqs} title="Computer Repair FAQ" />
 
       {/* Related Services */}
       <section className="py-16 bg-white">

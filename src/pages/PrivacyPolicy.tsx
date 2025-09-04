@@ -1,5 +1,6 @@
 import React from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
 import { 
   Shield, 
   Lock, 
@@ -20,11 +21,15 @@ import {
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-white" id="privacy-policy">
-      <SEOHead
+      <Seo
         title="Privacy Policy | KorTech Service Charlotte NC"
         description="Privacy policy for computer repair Charlotte NC services. Learn how we protect your data during repairs. Call 704-246-7642!"
-        canonicalUrl="/privacy-policy"
+        canonical="/privacy-policy"
       />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Privacy Policy', url: '/privacy-policy' }]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-100 to-blue-50 text-slate-800 py-20 relative overflow-hidden">

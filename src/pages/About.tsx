@@ -1,5 +1,7 @@
 import React from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
+import { createLocalBusinessSchema } from '../seo/jsonld';
 import { 
   CheckCircle, 
   Star, 
@@ -17,27 +19,7 @@ import {
 } from 'lucide-react';
 
 const About = () => {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "About KorTech Service - Charlotte Computer Repair",
-      "description": "Learn about KorTech Service, Charlotte's trusted computer repair company since 1998. Professional Mac & PC repair, data recovery, and IT support.",
-      "url": "https://kortechservice.com/about",
-      "mainEntity": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "foundingDate": "1998",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        }
-      }
-    }
-  ];
+  const schema = [createLocalBusinessSchema()];
 
   const achievements = [
     { 
@@ -112,13 +94,16 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white" id="about-page">
-      <SEOHead
-        title="About KorTech Service | Charlotte Computer Repair"
-        description="Trusted computer repair Charlotte NC since 1998. Professional Mac & PC repair, data recovery & IT support. Call 704-246-7642!"
-        keywords="about KorTech Service, computer repair Charlotte NC history, Charlotte computer repair company, trusted computer repair"
-        canonicalUrl="/about"
-        schema={schema}
+      <Seo
+        title="About Us | Charlotte Computer Repair | KorTech Service"
+        description="Trusted computer repair Charlotte NC since 1998. 100,000+ customers served. Professional Mac & PC repair, data recovery & IT support. Call 704-246-7642!"
+        canonical="/about"
+        jsonLd={schema}
       />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'About', url: '/about' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-100 to-blue-50 text-slate-800 py-32 relative overflow-hidden">

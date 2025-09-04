@@ -1,7 +1,9 @@
 import React from 'react';
-import SEOHead from '../../components/SEOHead';
-import ServiceCTA from '../../components/ServiceCTA';
-import FAQSection from '../../components/FAQSection';
+import Seo from '../../seo/Seo';
+import Breadcrumb from '../../components/Breadcrumb';
+import FAQ from '../../components/FAQ';
+import { createServiceSchema, createFAQSchema } from '../../seo/jsonld';
+import { SITE } from '../../seo/config';
 import { 
   HardDrive, 
   Shield, 
@@ -20,8 +22,8 @@ import {
 const DataRecovery = () => {
   const faqs = [
     {
-      question: "How much does data recovery cost in Charlotte?",
-      answer: "Data recovery costs vary based on the type of failure and amount of data. We provide free diagnostics ($75-$150 value, waived with recovery) and detailed quotes for all data recovery services."
+      question: "How much does data recovery cost?",
+      answer: "Data recovery costs vary based on the type of failure and amount of data. We provide free diagnostics and detailed quotes for all data recovery services."
     },
     {
       question: "What types of data can you recover?",
@@ -29,53 +31,38 @@ const DataRecovery = () => {
     },
     {
       question: "How long does data recovery take?",
-      answer: "Simple software-based recoveries take 1-3 days at our Charlotte location. Complex hardware recoveries can take 5-10 business days depending on the extent of damage."
+      answer: "Simple software-based recoveries take 1-3 days. Complex hardware recoveries can take 5-10 business days depending on the extent of damage."
+    },
+    {
+      question: "What areas do you serve for data recovery?",
+      answer: `We provide data recovery services throughout ${SITE.AREAS.join(', ')} and surrounding areas with emergency service available.`
     },
     {
       question: "What is your success rate for data recovery?",
       answer: "Our success rate is over 95% for most common data loss scenarios. Even in severe cases like fire or water damage, we often recover significant portions of data."
-    },
-    {
-      question: "Do you offer emergency data recovery services?",
-      answer: "Yes, we provide emergency data recovery services for critical business data. Contact us immediately for urgent situations - we can often prioritize your case."
     }
   ];
 
   const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Data Recovery Services",
-      "description": "Professional data recovery services in Charlotte, NC. Recover lost data from failed hard drives, SSDs, and storage devices.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        },
-        "telephone": "704-246-7642"
-      },
-      "areaServed": "Charlotte, NC",
-      "offers": {
-        "@type": "Offer",
-        "availability": "InStock",
-        "description": "Professional data recovery services"
-      }
-    }
+    createServiceSchema("Data Recovery Services", "Professional data recovery services. Recover lost data from failed hard drives, SSDs, and storage devices with 95% success rate."),
+    createFAQSchema(faqs)
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead
+      <Seo
         title="Data Recovery Charlotte NC | KorTech Service"
         description="Expert data recovery Charlotte NC. Recover lost files from failed hard drives, SSDs. 95% success rate. Call 704-246-7642!"
-        canonicalUrl="/data-recovery"
-        schema={schema}
+        canonical="/data-recovery"
+        jsonLd={schema}
       />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[
+          { name: 'Services', url: '/services' },
+          { name: 'Data Recovery', url: '/data-recovery' }
+        ]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-900 to-orange-900 text-white py-20 relative overflow-hidden">
@@ -105,6 +92,13 @@ const DataRecovery = () => {
               <p className="text-xl text-gray-200 leading-relaxed">
                 Professional data recovery from failed hard drives, SSDs, and storage devices at our Charlotte location. 
                 95% success rate with walk-in diagnostics and emergency services available. Serving Charlotte, Matthews, Mint Hill, Pineville, and Ballantyne.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                When disaster strikes and you lose important files, photos, or business data, our expert data recovery specialists are here to help. 
+                We recover data from mechanical hard drive failures, corrupted SSDs, accidentally deleted files, formatted drives, and even 
+                fire or water damaged storage devices. Our advanced recovery techniques and clean room facilities allow us to achieve a 95% 
+                success rate across all types of data loss scenarios.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -243,14 +237,31 @@ const DataRecovery = () => {
       </section>
 
       {/* Service CTA */}
-      <ServiceCTA 
-        service="Data Recovery" 
-        price="Call/Text For Quote"
-        urgentText="Emergency Data Recovery Available"
-      />
+      <section className="bg-gradient-to-r from-red-600 to-orange-800 text-white rounded-2xl p-8 my-12">
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl font-bold">Need Data Recovery?</h3>
+          <p className="text-xl text-red-100">
+            Professional recovery service in Charlotte, NC • Call/Text For Quote
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <a
+              href={`tel:${SITE.PHONE}`}
+              className="bg-white text-red-600 hover:bg-red-50 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Call Now</span>
+            </a>
+            <a
+              href={`sms:${SITE.SMS}`}
+              className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Text Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} title="Data Recovery FAQ" />
+      <FAQ faqs={faqs} title="Data Recovery FAQ" />
 
       {/* Related Services */}
       <section className="py-16 bg-white">

@@ -1,7 +1,9 @@
 import React from 'react';
-import SEOHead from '../../components/SEOHead';
-import ServiceCTA from '../../components/ServiceCTA';
-import FAQSection from '../../components/FAQSection';
+import Seo from '../../seo/Seo';
+import Breadcrumb from '../../components/Breadcrumb';
+import FAQ from '../../components/FAQ';
+import { createServiceSchema, createFAQSchema } from '../../seo/jsonld';
+import { SITE } from '../../seo/config';
 import { 
   Smartphone, 
   Wrench, 
@@ -17,75 +19,47 @@ import {
 const PhoneRepair = () => {
   const faqs = [
     {
-      question: "How much does phone screen repair cost in Charlotte?",
-      answer: "Phone screen repair costs vary by device model. iPhone screen repairs typically range from $129-$299, Android screens from $99-$249. We provide free diagnostics and detailed quotes."
+      question: "How much does phone repair cost in Charlotte?",
+      answer: "Phone repair costs vary by device model. iPhone screen repairs typically range from $129-$299, Android screens from $99-$249. We provide free diagnostics and detailed quotes."
     },
     {
       question: "How long does phone repair take?",
-      answer: "Most phone repairs are completed within 1-2 hours at our Charlotte location. Screen replacements and battery services can often be done while you wait."
+      answer: "Most phone repairs are completed within 1-2 hours. Screen replacements and battery services can often be done while you wait."
     },
     {
       question: "What phone brands do you repair?",
       answer: "We repair all major smartphone brands including iPhone, Samsung Galaxy, Google Pixel, OnePlus, LG, and more."
     },
     {
-      question: "Do you offer warranty on phone repairs?",
-      answer: "Yes, we provide a 14-day limited warranty on all parts installed, covering only the parts themselves. This warranty does not include accidental damage, liquid damage, drops, or any similar incidents."
+      question: "What areas do you serve for phone repair?",
+      answer: `We provide phone repair services throughout ${SITE.AREAS.join(', ')} and surrounding areas with convenient location access.`
     },
     {
-      question: "Can you repair water-damaged phones?",
-      answer: "Yes, we specialize in water damage repair. Bring your phone in immediately for the best chance of recovery."
+      question: "Do you offer warranty on phone repairs?",
+      answer: "Yes, we provide a 14-day limited warranty on all parts installed. This covers manufacturing defects but not accidental damage."
     }
   ];
 
   const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Smartphone Repair Services",
-      "description": "Professional smartphone repair services including screen replacement, battery replacement, and water damage repair for iPhone, Samsung, and all major brands.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        },
-        "telephone": "704-246-7642"
-      },
-      "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Indian Trail, NC", "Waxhaw, NC", "Pineville, NC", "Ballantyne, NC"],
-      "offers": {
-        "@type": "Offer",
-        "availability": "InStock",
-        "description": "Professional smartphone repair services"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    }
+    createServiceSchema("Smartphone Repair Services", "Professional smartphone repair services including screen replacement, battery replacement, and water damage repair for iPhone, Samsung, and all major brands."),
+    createFAQSchema(faqs)
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead
+      <Seo
         title="Phone Repair Charlotte NC | iPhone & Android | KorTech"
         description="Expert phone repair Charlotte NC. iPhone & Android screen repair, battery replacement. Serving Charlotte, Matthews, Mint Hill. Call 704-246-7642!"
-        keywords="phone repair Charlotte NC, iPhone repair Charlotte, Android repair Charlotte, phone screen repair, phone battery replacement"
-        canonicalUrl="/phone-repair"
-        schema={schema}
+        canonical="/phone-repair"
+        jsonLd={schema}
       />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[
+          { name: 'Services', url: '/services' },
+          { name: 'Phone Repair', url: '/phone-repair' }
+        ]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-purple-900 text-white py-20 relative overflow-hidden">
@@ -110,6 +84,13 @@ const PhoneRepair = () => {
               <p className="text-xl text-gray-200 leading-relaxed">
                 Professional smartphone repair services in Charlotte, Matthews, Mint Hill, Indian Trail, Waxhaw, Pineville, and Ballantyne. 
                 Expert iPhone and Android repair with same-day service available.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our skilled technicians repair all smartphone models with quality parts and fast turnaround times. From cracked screens 
+                to battery replacements, charging port repairs, and water damage restoration, we handle all types of mobile device issues. 
+                We use high-quality replacement parts and provide same-day service for most repairs. Serving customers throughout the 
+                Charlotte metro area with convenient location access and competitive pricing.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -187,14 +168,31 @@ const PhoneRepair = () => {
       </section>
 
       {/* Service CTA */}
-      <ServiceCTA 
-        service="Phone Repair" 
-        price="Call/Text For Quote"
-        urgentText="Same-Day Phone Repair Available"
-      />
+      <section className="bg-gradient-to-r from-blue-600 to-purple-800 text-white rounded-2xl p-8 my-12">
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl font-bold">Need Phone Repair?</h3>
+          <p className="text-xl text-blue-100">
+            Professional repair service in Charlotte, NC • Call/Text For Quote
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <a
+              href={`tel:${SITE.PHONE}`}
+              className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Call Now</span>
+            </a>
+            <a
+              href={`sms:${SITE.SMS}`}
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Text Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} title="Phone Repair FAQ" />
+      <FAQ faqs={faqs} title="Phone Repair FAQ" />
 
       {/* Related Services */}
       <section className="py-16 bg-white">

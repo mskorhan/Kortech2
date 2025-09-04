@@ -1,7 +1,9 @@
 import React from 'react';
-import SEOHead from '../../components/SEOHead';
-import ServiceCTA from '../../components/ServiceCTA';
-import FAQSection from '../../components/FAQSection';
+import Seo from '../../seo/Seo';
+import Breadcrumb from '../../components/Breadcrumb';
+import FAQ from '../../components/FAQ';
+import { createServiceSchema, createFAQSchema } from '../../seo/jsonld';
+import { SITE } from '../../seo/config';
 import { 
   Settings, 
   Shield, 
@@ -20,63 +22,47 @@ import {
 const BusinessITSupport = () => {
   const faqs = [
     {
-      question: "What business IT support services do you provide in Charlotte?",
-      answer: "We provide comprehensive business IT support including on-site network setup, computer maintenance, server support & ongoing technical assistance for businesses in Charlotte, Matthews, Mint Hill, Pineville & Ballantyne."
+      question: "What business IT support services do you provide?",
+      answer: "We provide comprehensive business IT support including on-site network setup, computer maintenance, server support & ongoing technical assistance for local businesses."
     },
     {
       question: "Do you offer on-site business support?",
-      answer: "Yes, we provide on-site IT support for businesses throughout the Charlotte metro area. Our technicians come to your location for network setup, maintenance, and troubleshooting."
+      answer: "Yes, we provide on-site IT support for businesses throughout the area. Our technicians come to your location for network setup, maintenance, and troubleshooting."
     },
     {
       question: "What are your business IT support response times?",
-      answer: "We offer same-day response for urgent business issues and typically respond to support requests within 2-4 hours during business hours for our local Charlotte area clients."
+      answer: "We offer same-day response for urgent business issues and typically respond to support requests within 2-4 hours during business hours."
     },
     {
-      question: "Do you support both Windows and Mac business environments?",
-      answer: "Yes, our technicians are certified to support both Windows PCs and Mac systems, as well as various mobile devices and network equipment for businesses."
+      question: "What areas do you serve for IT support?",
+      answer: `We provide IT support services throughout ${SITE.AREAS.join(', ')} and surrounding areas with on-site service available.`
     },
     {
-      question: "Can you help with business network setup in Charlotte?",
-      answer: "Absolutely! We specialize in business network design, installation, and configuration including Wi-Fi setup, security implementation, and ongoing network maintenance for Charlotte area businesses."
+      question: "Do you support both Windows and Mac environments?",
+      answer: "Yes, our technicians are certified to support both Windows PCs and Mac systems, as well as various mobile devices and network equipment."
     }
   ];
 
   const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Business IT Support Services",
-      "description": "Professional business IT support and technical services in Charlotte, NC. On-site network setup, computer maintenance, and ongoing IT support for local businesses.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "KorTech Service",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1721 Sardis Rd N, Suite 7A",
-          "addressLocality": "Charlotte",
-          "addressRegion": "NC",
-          "postalCode": "28270"
-        },
-        "telephone": "704-246-7642"
-      },
-      "areaServed": ["Charlotte, NC", "Matthews, NC", "Mint Hill, NC", "Pineville, NC", "Ballantyne, NC"],
-      "offers": {
-        "@type": "Offer",
-        "availability": "InStock",
-        "description": "Professional business IT support and technical services"
-      }
-    }
+    createServiceSchema("Business IT Support Services", "Professional business IT support and technical services. On-site network setup, computer maintenance, and ongoing IT support for local businesses."),
+    createFAQSchema(faqs)
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      <SEOHead
+      <Seo
         title="Business IT Support Charlotte NC | KorTech"
         description="Professional business IT support Charlotte NC. On-site network setup, computer maintenance & ongoing IT support. Call 704-246-7642!"
-        keywords="business IT support Charlotte, on-site IT support Charlotte NC, network setup Charlotte, business computer support, IT services Charlotte"
-        canonicalUrl="/business-it-support"
-        schema={schema}
+        canonical="/it-support"
+        jsonLd={schema}
       />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[
+          { name: 'Services', url: '/services' },
+          { name: 'IT Support', url: '/it-support' }
+        ]} />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-20 relative overflow-hidden">
@@ -101,6 +87,13 @@ const BusinessITSupport = () => {
               <p className="text-xl text-gray-200 leading-relaxed">
                 Professional business IT support and technical services for Charlotte area businesses. 
                 On-site network setup, computer maintenance, and ongoing support from local technicians serving Charlotte, Matthews, Mint Hill, Pineville, and Ballantyne.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our certified IT professionals provide comprehensive technology support for businesses of all sizes. From initial network design 
+                and installation to ongoing maintenance and troubleshooting, we ensure your business technology runs smoothly and securely. 
+                We offer flexible service plans, emergency support, and proactive monitoring to minimize downtime and maximize productivity. 
+                Our local team understands the unique needs of Charlotte area businesses.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -330,14 +323,31 @@ const BusinessITSupport = () => {
       </section>
 
       {/* Service CTA */}
-      <ServiceCTA 
-        service="Business IT Support" 
-        price="Call for Consultation"
-        urgentText="Same-Day On-Site Service Available"
-      />
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-800 text-white rounded-2xl p-8 my-12">
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl font-bold">Need IT Support?</h3>
+          <p className="text-xl text-blue-100">
+            Professional IT services in Charlotte, NC • Call for Consultation
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <a
+              href={`tel:${SITE.PHONE}`}
+              className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Call Now</span>
+            </a>
+            <a
+              href={`sms:${SITE.SMS}`}
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-xl font-bold text-lg flex items-center justify-center space-x-2 transition-all duration-300"
+            >
+              <span>Text Us</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} title="Business IT Support FAQ" />
+      <FAQ faqs={faqs} title="Business IT Support FAQ" />
 
       {/* Related Services */}
       <section className="py-16 bg-white">

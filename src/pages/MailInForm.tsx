@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import SEOHead from '../components/SEOHead';
+import Seo from '../seo/Seo';
+import Breadcrumb from '../components/Breadcrumb';
 import { 
   Printer, 
   Package, 
@@ -19,16 +20,6 @@ import {
 } from 'lucide-react';
 
 const MailInForm = () => {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Mail-In Repair Form",
-      "description": "Complete mail-in repair form for shipping your device to KorTech Service for professional computer repair.",
-      "url": "https://kortechservice.com/mail-in-form"
-    }
-  ];
-
   const formRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({ 
     fullName: '',
@@ -415,12 +406,15 @@ const MailInForm = () => {
 
   return (
     <div className="min-h-screen bg-white" id="mail-in-form-page">
-      <SEOHead
+      <Seo
         title="Mail-In Computer Repair Form Charlotte NC | KorTech"
         description="Mail-in computer repair Charlotte NC form. Ship your device to KorTech Service for professional repair. Call 704-246-7642!"
-        canonicalUrl="/mail-in-form"
-        schema={schema}
+        canonical="/mail-in-form"
       />
+      
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Breadcrumb items={[{ name: 'Mail-In Form', url: '/mail-in-form' }]} />
+      </div>
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-100 to-blue-50 text-slate-800 py-20 relative overflow-hidden">
